@@ -21,6 +21,7 @@
         "nunomaduro/collision": "^5.0",
         "pestphp/pest": "^1.19",
         "pestphp/pest-plugin-laravel": "^1.1",
+        "pestphp/pest-plugin-livewire": "^1.0",
         "phpunit/phpunit": "^9.3.3"
     },
     "autoload": {
