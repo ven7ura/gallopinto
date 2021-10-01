@@ -1,0 +1,63 @@
+<?php
+
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
+use Tests\Factories\PostFactory;
+use Tests\TestCase;
+
+uses(TestCase::class);
+
+beforeEach(function () {
+    Storage::fake('posts');
+});
+
+function getPostFile(string $slug): string
+{
+    return Storage::disk('posts')
+        ->get(Carbon::today()
+            ->format('Y-m-d').".$slug.md");
+}
+
+it('creates new post file', function () {
+    $postPath = PostFactory::new()
+        ->create();
+
+    $this->assertFileExists($postPath);
+});
+
+it('sets the post title', function () {
+    $postPath = PostFactory::new()
+        ->title('My Blog Title')
+        ->create();
+
+    $this->assertStringContainsString('my-blog-title.md', $postPath);
+    $this->assertStringContainsString('My Blog Title', getPostFile('my-blog-title'));
+});
+
+it('sets the post categories', function () {
+    $postPath = PostFactory::new()
+        ->categories([
+            'Laravel',
+            'Testing',
+        ])->create();
+
+    $this->assertStringContainsString('my-blog-title.md', $postPath);
+    $this->assertStringContainsString('My Blog Title', getPostFile('my-blog-title'));
+});
+
+it('sets the post content', function () {
+    PostFactory::new()
+        ->content('content')
+        ->create();
+
+    $this->assertStringContainsString('content', getPostFile('my-blog-title'));
+});
+
+it('creates multiple post files', function () {
+    $posts = PostFactory::new()
+        ->createMultiple(3);
+
+    $this->assertFileExists($posts[0]);
+    $this->assertFileExists($posts[1]);
+    $this->assertFileExists($posts[2]);
+});
