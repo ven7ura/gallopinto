@@ -29,6 +29,15 @@ class Post extends Sheet
             ->first();
     }
 
+    public static function findBySearch(string $query): Collection
+    {
+        return Sheets::all()
+            ->sortByDesc('date')
+            ->filter(function ($file) use ($query) {
+                return Str::contains($file, $query);
+            });
+    }
+
     public static function count(): int
     {
         return Sheets::all()->count();
@@ -40,14 +49,5 @@ class Post extends Sheet
             ->sortByDesc('date')
             ->skip(($page - 1) * $postPerPage)
             ->take($postPerPage);
-    }
-
-    public static function findBySearch(string $query): Collection
-    {
-        return Sheets::all()
-            ->sortByDesc('date')
-            ->filter(function ($file) use ($query) {
-                return Str::contains($file, $query);
-            });
     }
 }

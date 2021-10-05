@@ -3,14 +3,15 @@
 namespace App\Http\Livewire;
 
 use App\Models\Post;
+use Illuminate\Support\Collection;
 use Livewire\Component;
 
 class PostList extends Component
 {
     public int $postPerPage = 15;
     public int $currentPage = 1;
-    public string $query = '';
     public int $pagesCount;
+    public string $query = '';
 
     public function mount()
     {
@@ -24,7 +25,7 @@ class PostList extends Component
         return view('livewire.post-list', compact('results'));
     }
 
-    public function searchResults()
+    public function searchResults(): Collection
     {
         $this->currentPage = 1;
         $query = strtolower($this->query);
