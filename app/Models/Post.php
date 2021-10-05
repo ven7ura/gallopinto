@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Spatie\Sheets\Facades\Sheets;
 use Spatie\Sheets\Sheet;
+use Str;
 
 class Post extends Sheet
 {
@@ -39,5 +40,14 @@ class Post extends Sheet
             ->sortByDesc('date')
             ->skip(($page - 1) * $postPerPage)
             ->take($postPerPage);
+    }
+
+    public static function findBySearch(string $query): Collection
+    {
+        return Sheets::all()
+            ->sortByDesc('date')
+            ->filter(function ($file) use ($query) {
+                return Str::contains($file, $query);
+            });
     }
 }
