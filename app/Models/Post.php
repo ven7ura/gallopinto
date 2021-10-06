@@ -20,6 +20,18 @@ class Post extends Sheet
         return Carbon::parse($this->attributes['date'])->format('m');
     }
 
+    public function getCategoriesAttribute(): array
+    {
+        return explode(', ', strtolower($this->attributes['categories']));
+    }
+
+    public static function findByCategory($category): Collection
+    {
+        return Sheets::all()->filter(function (Post $post) use ($category) {
+            return in_array(strtolower($category), $post->categories);
+        });
+    }
+
     public static function findByPath($year, $month, string $slug)
     {
         return Sheets::all()

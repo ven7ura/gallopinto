@@ -24,8 +24,8 @@ it('shows a specific post', function () {
     get("$pathDate/hello-world")
         ->assertStatus(200)
         ->assertSee('Hello World')
-        ->assertSee('Business')
-        ->assertSee('Laravel')
+        ->assertSee('business')
+        ->assertSee('laravel')
         ->assertSee('My blog content');
 });
 

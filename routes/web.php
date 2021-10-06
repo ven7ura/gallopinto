@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageCategoryController;
 use App\Http\Controllers\PageHomeController;
 use App\Http\Controllers\PagePostController;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', PageHomeController::class);
 
-Route::get('/{year}/{month}/{slug}', PagePostController::class);
+Route::get('/{year}/{month}/{slug}', PagePostController::class)->name('page.post');
+
+Route::get('/category/{category}', PageCategoryController::class)->name('page.category');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
