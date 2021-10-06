@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PageCategoryController;
+use App\Http\Controllers\PageHomeController;
+use App\Http\Controllers\PagePostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', PageHomeController::class);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/{year}/{month}/{slug}', PagePostController::class)->name('page.post');
 
-require __DIR__.'/auth.php';
+Route::get('/category/{category}', PageCategoryController::class)->name('page.category');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+// require __DIR__.'/auth.php';
