@@ -1,4 +1,4 @@
-<nav x-data="{ navOpen: false }" class="bg-gray-100 shadow-lg">
+<nav x-data="{ navOpen: false }" class="bg-white shadow">
     <div class="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
