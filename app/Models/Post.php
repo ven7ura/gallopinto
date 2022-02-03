@@ -62,4 +62,9 @@ class Post extends Sheet
             ->skip(($page - 1) * $postPerPage)
             ->take($postPerPage);
     }
+
+    public function link(): string
+    {
+        return route('page.post', ['year' => $this->year, 'month' => $this->month, 'slug' => $this->slug]);
+    }
 }

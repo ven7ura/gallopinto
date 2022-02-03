@@ -41,7 +41,7 @@ test('the method find by search works correctly', function () {
     PostFactory::new()->createMultiple(40);
 
     Livewire::test('post-list')
-    ->set('query', 'laravel')
+    ->set('searchTerm', 'laravel')
     ->assertSee('Laravel');
 });
 
@@ -51,9 +51,9 @@ it('resets pagination after search', function () {
     Livewire::test('post-list')
     ->call('nextPage')
     ->assertSet('currentPage', 2)
-    ->set('query', 'laravel')
+    ->set('searchTerm', 'laravel')
     ->assertDontSee('Next')
-    ->set('query', '')
+    ->set('searchTerm', '')
     ->assertSee('Next')
     ->assertSet('currentPage', 1);
 });

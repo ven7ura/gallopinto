@@ -11,7 +11,8 @@ class PostList extends Component
     public int $postPerPage = 15;
     public int $currentPage = 1;
     public int $pagesCount;
-    public string $query = '';
+    public string $searchTerm = '';
+    protected $queryString = ['searchTerm' => ['except' => '']];
 
     public function mount()
     {
@@ -20,15 +21,16 @@ class PostList extends Component
 
     public function render()
     {
-        $results = $this->query ? $this->searchResults() : Post::paginate($this->postPerPage, $this->currentPage);
+        $results = $this->searchTerm ? $this->searchResults() : Post::paginate($this->postPerPage, $this->currentPage);
 
         return view('livewire.post-list', compact('results'));
     }
 
     public function searchResults(): Collection
     {
+        // Reset current page
         $this->currentPage = 1;
-        $query = strtolower($this->query);
+        $query = strtolower($this->searchTerm);
 
         return Post::findBySearch($query);
     }

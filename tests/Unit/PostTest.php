@@ -22,3 +22,17 @@ it('finds a specific post by path', function () {
     expect($post)->toBeInstanceOf(Post::class);
     expect('Hello World')->toBe($post->title);
 });
+
+it('outputs the correct link path', function () {
+    Storage::fake('posts');
+
+    PostFactory::new()
+        ->title('Hello World')
+        ->create();
+
+    $today = Carbon::today();
+
+    $post = Post::findByPath($today->year, $today->month, 'hello-world');
+
+    expect($post->link())->toBe('http://gallopint.test/2022/02/hello-world');
+});

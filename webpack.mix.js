@@ -19,4 +19,5 @@ mix.js('resources/js/app.js', 'public/js')
         require('autoprefixer'),
     ])
     .purgeCss()
-    .browserSync('gallopinto.test');
+    .browserSync('gallopinto.test')
+    .disableNotifications();
