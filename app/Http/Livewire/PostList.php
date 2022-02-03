@@ -12,7 +12,9 @@ class PostList extends Component
     public int $currentPage = 1;
     public int $pagesCount;
     public string $searchTerm = '';
-    protected $queryString = ['searchTerm' => ['except' => '']];
+    protected $queryString = [
+        'searchTerm' => ['except' => ''],
+    ];
 
     public function mount()
     {
