@@ -38,11 +38,11 @@
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <a href="#" class="bg-gray-700 text-gray-200 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</a>
-
-                            <a href="#" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                            <a href="{{ route('page.home') }}" class="bg-gray-700 text-gray-200 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</a>
 
                             <a href="#" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
+
+                            <a href="#" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
     </div>
     <div x-cloak x-show="navOpen" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" class="bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+            <a href="{{ route('page.home') }}" class="bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
             <a href="#" class="text-gray-900 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
             <a href="#" class="text-gray-900 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Proyectos</a>
         </div>

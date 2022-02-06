@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', PageHomeController::class);
+Route::get('/', PageHomeController::class)->name('page.home');
 
 Route::get('/{year}/{month}/{slug}', PagePostController::class)->name('page.post');
 
