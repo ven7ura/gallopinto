@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.19 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -1520,30 +1520,34 @@ select {
 pre code.hljs{display:block;overflow-x:auto;padding:1em}
 code.hljs{padding:3px 5px}
 /*!
-  Theme: GitHub Dark
-  Description: Dark theme as seen on github.com
-  Author: github.com
+  Theme: StackOverflow Dark
+  Description: Dark theme as used on stackoverflow.com
+  Author: stackoverflow.com
   Maintainer: @Hirse
+  Website: https://github.com/StackExchange/Stacks
+  License: MIT
   Updated: 2021-05-15
 
-  Outdated base version: https://github.com/primer/github-syntax-dark
-  Current colors taken from GitHub's CSS
+  Updated for @stackoverflow/stacks v0.64.0
+  Code Blocks: /blob/v0.64.0/lib/css/components/_stacks-code-blocks.less
+  Colors: /blob/v0.64.0/lib/css/exports/_stacks-constants-colors.less
 */
-.hljs{color:#c9d1d9;background:#0d1117}
-.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#ff7b72}
-.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#d2a8ff}
-.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#79c0ff}
-.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#a5d6ff}
-.hljs-built_in,.hljs-symbol{color:#ffa657}
-.hljs-code,.hljs-comment,.hljs-formula{color:#8b949e}
-.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#7ee787}
-.hljs-subst{color:#c9d1d9}
-.hljs-section{color:#1f6feb;font-weight:700}
-.hljs-bullet{color:#f2cc60}
-.hljs-emphasis{color:#c9d1d9;font-style:italic}
-.hljs-strong{color:#c9d1d9;font-weight:700}
-.hljs-addition{color:#aff5b4;background-color:#033a16}
-.hljs-deletion{color:#ffdcd7;background-color:#67060c}
+.hljs{color:#fff;background:#1c1b1b}
+.hljs-subst{color:#fff}
+.hljs-comment{color:#999}
+.hljs-attr,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-section,.hljs-selector-tag{color:#88aece}
+.hljs-attribute{color:#c59bc1}
+.hljs-name,.hljs-number,.hljs-quote,.hljs-selector-id,.hljs-template-tag,.hljs-type{color:#f08d49}
+.hljs-selector-class{color:#88aece}
+.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-string,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#b5bd68}
+.hljs-meta,.hljs-selector-pseudo{color:#88aece}
+.hljs-built_in,.hljs-literal,.hljs-title{color:#f08d49}
+.hljs-bullet,.hljs-code{color:#ccc}
+.hljs-meta .hljs-string{color:#b5bd68}
+.hljs-deletion{color:#de7176}
+.hljs-addition{color:#76c490}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1681,6 +1685,33 @@ code.hljs{padding:3px 5px}
 }
 .disabled\:opacity-25:disabled {
   opacity: 0.25;
+}
+.prose-pre\:bg-gray-900 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+.prose-pre\:bg-gray-600 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+.prose-pre\:bg-gray-800 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+.prose-pre\:bg-transparent :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  background-color: transparent;
+}
+.prose-pre\:bg-slate-900 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+.prose-pre\:bg-zinc-800 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+}
+.prose-pre\:bg-zinc-900 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 @media (prefers-color-scheme: dark) {
 
@@ -2058,6 +2089,10 @@ code.hljs{padding:3px 5px}
     padding-top: 0.5rem;
   }
 
+  .md\:pt-4 {
+    padding-top: 1rem;
+  }
+
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -2308,4 +2343,3 @@ code.hljs{padding:3px 5px}
     line-height: 1.75rem;
   }
 }
-
