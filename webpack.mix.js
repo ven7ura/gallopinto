@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 require('laravel-mix-purgecss');
+require('babel-plugin-prismjs');
 
 /*
  |--------------------------------------------------------------------------
@@ -19,4 +20,5 @@ mix.js('resources/js/app.js', 'public/js')
         require('autoprefixer'),
     ])
     .purgeCss()
-    .browserSync('gallopinto.test');
+    .browserSync('gallopinto.test')
+    .disableNotifications();
