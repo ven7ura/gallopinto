@@ -29,8 +29,8 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="GalloPinto">
-                    <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="GalloPinto">
+                    <img class="block lg:hidden h-10 w-auto" src="{{ asset('img/gp.svg') }}" alt="GalloPinto">
+                    <img class="hidden lg:block h-10 w-auto" src="{{ asset('img/gp.svg')}}" alt="GalloPinto">
                 </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
