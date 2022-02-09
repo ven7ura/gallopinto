@@ -1,8 +1,8 @@
 <?php
 
-use Tests\TestCase;
-use Tests\Factories\ProjectFactory;
 use Illuminate\Support\Facades\Storage;
+use Tests\Factories\ProjectFactory;
+use Tests\TestCase;
 
 uses(TestCase::class);
 
@@ -10,10 +10,10 @@ beforeEach(function () {
     Storage::fake('projects');
 });
 
-function getProjectFile(string $slug, string $project, int $order): string
+function getProjectFile(string $slug, string $codename, int $order): string
 {
     return Storage::disk('projects')
-        ->get("{$project}.{$order}.{$slug}.md");
+        ->get("{$codename}.{$order}.{$slug}.md");
 }
 
 it('creates new project file', function () {
@@ -27,9 +27,8 @@ it('sets the project title', function () {
     $projectPath = ProjectFactory::new()
         ->title('My Project')
         ->order(1)
-        ->project('Project')
+        ->codename('Project')
         ->create();
-
 
     $this->assertStringContainsString('my-project.md', $projectPath);
     $this->assertStringContainsString('My Project', getProjectFile('my-project', 'project', 1));
@@ -41,6 +40,14 @@ it('sets the project content', function () {
         ->create();
 
     $this->assertStringContainsString('content', getProjectFile('my-project-title', 'my-project', 1));
+});
+
+it('sets the project name correctly', function () {
+    ProjectFactory::new()
+        ->project('My new project')
+        ->create();
+
+    $this->assertStringContainsString('My new project', getProjectFile('my-project-title', 'my-project', 1));
 });
 
 it('creates multiple post files', function () {

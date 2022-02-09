@@ -14,7 +14,7 @@ it('shows an specific project page', function () {
     $project = ProjectFactory::new()
         ->title('Introduccion')
         ->order(1)
-        ->project('My project')
+        ->codename('My project')
         ->create();
 
     get('/proyectos/my-project/introduccion')

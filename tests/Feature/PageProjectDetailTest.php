@@ -13,7 +13,7 @@ beforeEach(function () {
 it('shows a ordered list of all the project content', function () {
     $projects = ProjectFactory::new()
         ->title('Aprendamos algo nuevo')
-        ->project('Hydrophonics')
+        ->codename('Hydrophonics')
         ->createMultiple(10);
 
     get('/proyectos/hydrophonics')

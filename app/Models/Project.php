@@ -8,28 +8,28 @@ use Spatie\Sheets\Sheet;
 
 class Project extends Sheet
 {
-    public function getProjectAttribute(): string
+    public function getCodenameAttribute(): string
     {
-        return $this->attributes['project'];
+        return $this->attributes['codename'];
     }
 
-    public static function findByPath($project, $slug): self|null
+    public static function findByPath($codename, $slug): self|null
     {
         return Sheets::collection('projects')->all()
-            ->where('project', $project)
+            ->where('codename', $codename)
             ->where('slug', $slug)
             ->first();
     }
 
-    public static function findByProject($project): Collection
+    public static function findByProject($codename): Collection
     {
         return Sheets::collection('projects')->all()
-            ->where('project', $project)
+            ->where('codename', $codename)
             ->sortBy('order');
     }
 
     public function link(): string
     {
-        return route('page.project', ['project' => $this->project, 'slug' => $this->slug]);
+        return route('page.project', ['codename' => $this->codename, 'slug' => $this->slug]);
     }
 }

@@ -13,11 +13,12 @@ class PageProjectDetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request, $project)
+    public function __invoke(Request $request, $codename)
     {
-        $projects = Project::findByProject($project);
+        $projects = Project::findByProject($codename);
 
-        $projectName = Str::title(str_replace('-', ' ', $projects->first()->project));
+        $projectName = $projects->first()->project;
+        // $projectName = Str::title(str_replace('-', ' ', $projects->first()->project));
 
         return view('pages.project-detail', compact('projects', 'projectName'));
     }

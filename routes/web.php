@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageCategoryController;
 use App\Http\Controllers\PageHomeController;
 use App\Http\Controllers\PagePostController;
 use App\Http\Controllers\PageProjectController;
-use App\Http\Controllers\PageCategoryController;
 use App\Http\Controllers\PageProjectDetailController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +20,8 @@ use App\Http\Controllers\PageProjectDetailController;
 
 Route::get('/', PageHomeController::class)->name('page.home');
 
-Route::get('/proyectos/{project}', PageProjectDetailController::class)->name('page.project-detail');
-Route::get('/proyectos/{project}/{slug}', PageProjectController::class)->name('page.project');
+Route::get('/proyectos/{codename}', PageProjectDetailController::class)->name('page.project-detail');
+Route::get('/proyectos/{codename}/{slug}', PageProjectController::class)->name('page.project');
 
 Route::get('/categoria/{category}', PageCategoryController::class)->name('page.category');
 

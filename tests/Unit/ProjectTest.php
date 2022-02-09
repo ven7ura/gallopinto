@@ -14,7 +14,7 @@ beforeEach(function () {
 it('finds a specific project by path', function () {
     ProjectFactory::new()
         ->title('Hello World')
-        ->project('Hydrophonics')
+        ->codename('Hydrophonics')
         ->create();
 
     $project = Project::findByPath('hydrophonics', 'hello-world');
@@ -26,18 +26,18 @@ it('finds a specific project by path', function () {
 it('finds all the project items and returns a collection', function () {
     ProjectFactory::new()
         ->title('Algo nuevo')
-        ->project('Hydrophonics')
+        ->codename('Hydrophonics')
         ->createMultiple(9);
 
     ProjectFactory::new()
         ->title('Something out of the scope')
-        ->project('Something else')
+        ->codename('Something else')
         ->create();
 
     ProjectFactory::new()
         ->title('This one is on the scope')
         ->order(9)
-        ->project('Hydrophonics')
+        ->codename('Hydrophonics')
         ->create();
 
     $projects = Project::findByProject('hydrophonics');
@@ -56,7 +56,7 @@ it('finds all the project items and returns a collection', function () {
 it('outputs the correct link path', function () {
     ProjectFactory::new()
         ->title('Hello World')
-        ->project('Hydrophonics')
+        ->codename('Hydrophonics')
         ->create();
 
     $project = Project::findByPath('hydrophonics', 'hello-world');

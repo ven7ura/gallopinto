@@ -12,10 +12,10 @@ class SlugWithProjectAndOrderParser implements PathParser
 
         $filename = array_pop($parts);
 
-        [$project, $order, $slug] = explode('.', $filename);
+        [$codename, $order, $slug] = explode('.', $filename);
 
         return [
-            'project' => $project,
+            'codename' => $codename,
             'order' => $order,
             'slug' => implode('/', array_merge($parts, [$slug])),
         ];

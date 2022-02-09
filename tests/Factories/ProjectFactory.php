@@ -2,14 +2,15 @@
 
 namespace Tests\Factories;
 
-use Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
+use Str;
 
 class ProjectFactory
 {
     private string $title = 'My project title';
-    private string $project = 'My project';
+    private string $codename = 'my-project';
+    private string $project = 'Hagamos un Blog';
     private int $order = 1;
     private string $content = '';
     private bool $hidden = false;
@@ -21,7 +22,7 @@ class ProjectFactory
 
     public function create(): string
     {
-        return $this->createProjectFile($this->title, $this->project, $this->order);
+        return $this->createProjectFile($this->title, $this->codename, $this->order);
     }
 
     public function createMultiple(int $times): Collection
@@ -29,15 +30,15 @@ class ProjectFactory
         return collect()->times($times, function ($currentCount, $key) use ($times) {
             $order = $times - ($currentCount - 1);
 
-            return $this->createProjectFile($this->title, $this->project, $order);
+            return $this->createProjectFile($this->title, $this->codename, $order);
         });
     }
 
-    private function createProjectFile(string $title = null, string $project = null, int $order = 1): string
+    private function createProjectFile(string $title = null, string $codename = null, int $order = 1): string
     {
         $slug = Str::slug($title ?? $this->title);
-        $project = Str::slug($project ?? $this->project);
-        $path = "{$project}.{$order}.{$slug}.md";
+        $codename = Str::slug($codename ?? $this->codename);
+        $path = "{$codename}.{$order}.{$slug}.md";
         $destinationPath = Storage::disk('projects')
             ->getAdapter()
             ->getPathPrefix().$path;
@@ -54,6 +55,7 @@ class ProjectFactory
             ->get($path);
         $replacedFileContent = Str::of($fileContent)
             ->replace('{{blog_title}}', $title)
+            ->replace('{{project_name}}', $this->project)
             ->replace('{{content}}', $this->content)
             ->replace('{{hidden}}', $listed ? 'true' : 'false');
 
@@ -68,13 +70,13 @@ class ProjectFactory
         return $this;
     }
 
-    public function project(string $project): self
+    public function codename(string $codename): self
     {
-        $this->project = $project;
+        $this->codename = $codename;
 
         return $this;
     }
-    
+
     public function order(int $order): self
     {
         $this->order = $order;
@@ -85,6 +87,13 @@ class ProjectFactory
     public function content(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function project(string $project): self
+    {
+        $this->content = $project;
 
         return $this;
     }
