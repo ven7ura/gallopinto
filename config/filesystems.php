@@ -45,6 +45,11 @@ return [
             'root' => base_path('content/posts'),
         ],
 
+        'projects' => [
+            'driver' => 'local',
+            'root' => base_path('content/projects'),
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

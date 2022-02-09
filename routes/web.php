@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\PageCategoryController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageHomeController;
 use App\Http\Controllers\PagePostController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageProjectController;
+use App\Http\Controllers\PageCategoryController;
+use App\Http\Controllers\PageProjectDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', PageHomeController::class)->name('page.home');
 
-Route::get('/{year}/{month}/{slug}', PagePostController::class)->name('page.post');
+Route::get('/proyectos/{project}', PageProjectDetailController::class)->name('page.project-detail');
+Route::get('/proyectos/{project}/{slug}', PageProjectController::class)->name('page.project');
 
-Route::get('/category/{category}', PageCategoryController::class)->name('page.category');
+Route::get('/categoria/{category}', PageCategoryController::class)->name('page.category');
+
+Route::get('/{year}/{month}/{slug}', PagePostController::class)->name('page.post');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
