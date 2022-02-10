@@ -21,7 +21,7 @@ it('shows posts only from one category', function () {
         ->title('This is my business')
         ->create();
 
-    get('category/business')
+    get('categoria/business')
         ->assertSuccessful()
         ->assertSee('Blog went well')
         ->assertSee('This is my business')

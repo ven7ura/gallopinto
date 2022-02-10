@@ -32,7 +32,7 @@ class Post extends Sheet
         });
     }
 
-    public static function findByPath($year, $month, string $slug)
+    public static function findByPath($year, $month, string $slug): self|null
     {
         return Sheets::all()
             ->where('year', $year)
