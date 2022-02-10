@@ -1,9 +1,6 @@
 <?php
 
-namespace Tests\Feature;
-
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Storage;
 use function Pest\Laravel\get;
 use Tests\Factories\PostFactory;
 
@@ -11,7 +8,16 @@ beforeEach(function () {
     Storage::fake('posts');
 });
 
-it('shows a specific post', function () {
+it('shows all the post for the month', function () {
+    $lastMonth = Carbon::today()->subMonth(2);
+
+    $outdatedPost = PostFactory::new()
+        ->title('My mechanics')
+        ->date($lastMonth)
+        ->content('This is a mechanics blog')
+        ->categories(['Mechanic', 'Logger'])
+        ->create();
+
     $post = PostFactory::new()
         ->title('Hello World')
         ->content('My blog content')
@@ -21,15 +27,8 @@ it('shows a specific post', function () {
     $today = Carbon::today();
     $pathDate = $today->format('Y/m');
 
-    get("/blog/$pathDate/hello-world")
+    get("/blog/$pathDate")
         ->assertStatus(200)
         ->assertSee('Hello World')
-        ->assertSee('business')
-        ->assertSee('laravel')
-        ->assertSee('My blog content');
-});
-
-it('shows a 404 error if no post is found', function () {
-    get('2015/23/hello-world')
-        ->assertNotFound();
+        ->assertDontSee('My mechanics');
 });

@@ -3,6 +3,8 @@
 use App\Http\Controllers\PageCategoryController;
 use App\Http\Controllers\PageHomeController;
 use App\Http\Controllers\PagePostController;
+use App\Http\Controllers\PagePostMonthlyController;
+use App\Http\Controllers\PagePostYearlyController;
 use App\Http\Controllers\PageProjectController;
 use App\Http\Controllers\PageProjectDetailController;
 use App\Http\Controllers\PageProjectListController;
@@ -27,7 +29,9 @@ Route::get('/proyectos/{codename}/{slug}', PageProjectController::class)->name('
 
 Route::get('/categoria/{category}', PageCategoryController::class)->name('page.category');
 
-Route::get('/{year}/{month}/{slug}', PagePostController::class)->name('page.post');
+Route::get('/blog/{year}', PagePostYearlyController::class)->name('page.blog.yearly');
+Route::get('/blog/{year}/{month}', PagePostMonthlyController::class)->name('page.blog.monthly');
+Route::get('/blog/{year}/{month}/{slug}', PagePostController::class)->name('page.blog.post');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
