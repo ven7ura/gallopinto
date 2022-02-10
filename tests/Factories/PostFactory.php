@@ -13,6 +13,7 @@ class PostFactory
     private array $categories = [];
     private string $content = '';
     private bool $hidden = false;
+    private $date = null;
 
     public static function new(): PostFactory
     {
@@ -21,12 +22,14 @@ class PostFactory
 
     public function create(): string
     {
-        return $this->createPostFile($this->title, Carbon::now());
+        $date = $this->date ?? Carbon::now();
+
+        return $this->createPostFile($this->title, $date);
     }
 
     public function createMultiple(int $times): Collection
     {
-        $date = Carbon::today();
+        $date = $this->date ?? Carbon::today();
 
         return collect()->times($times, function ($currentCount, $key) use ($date, $times) {
             $postTitleNumber = $times - ($currentCount - 1);
@@ -74,6 +77,13 @@ class PostFactory
     public function categories(array $categories): self
     {
         $this->categories = $categories;
+
+        return $this;
+    }
+
+    public function date(Carbon $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

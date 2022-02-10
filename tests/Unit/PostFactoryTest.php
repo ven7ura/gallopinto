@@ -41,8 +41,8 @@ it('sets the post categories', function () {
             'Testing',
         ])->create();
 
-    $this->assertStringContainsString('my-blog-title.md', $postPath);
-    $this->assertStringContainsString('My Blog Title', getPostFile('my-blog-title'));
+    $this->assertStringContainsString('Laravel', getPostFile('my-blog-title'));
+    $this->assertStringContainsString('Testing', getPostFile('my-blog-title'));
 });
 
 it('sets the post content', function () {
@@ -51,6 +51,18 @@ it('sets the post content', function () {
         ->create();
 
     $this->assertStringContainsString('content', getPostFile('my-blog-title'));
+});
+
+it('sets the post date', function () {
+    $lastMonth = Carbon::today()->subMonth(2);
+    $dateFormat = $lastMonth->format('Y-m-d');
+
+    $postPath = PostFactory::new()
+        ->title('This was last month')
+        ->date($lastMonth)
+        ->create();
+
+    $this->assertStringContainsString($dateFormat, $postPath);
 });
 
 it('creates multiple post files', function () {

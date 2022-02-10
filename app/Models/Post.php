@@ -50,6 +50,21 @@ class Post extends Sheet
             });
     }
 
+    public static function findByMonthly($year, $month): Collection
+    {
+        return Sheets::all()
+            ->where('year', $year)
+            ->where('month', $month)
+            ->sortByDesc('date');
+    }
+
+    public static function findByYearly($year): Collection
+    {
+        return Sheets::all()
+            ->where('year', $year)
+            ->sortByDesc('date');
+    }
+
     public static function count(): int
     {
         return Sheets::all()->count();
@@ -65,6 +80,6 @@ class Post extends Sheet
 
     public function link(): string
     {
-        return route('page.post', ['year' => $this->year, 'month' => $this->month, 'slug' => $this->slug]);
+        return route('page.blog.post', ['year' => $this->year, 'month' => $this->month, 'slug' => $this->slug]);
     }
 }
