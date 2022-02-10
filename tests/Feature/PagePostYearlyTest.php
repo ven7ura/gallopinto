@@ -27,7 +27,7 @@ it('shows all the blog post for the year', function () {
     $today = Carbon::today();
     $pathDate = $today->format('Y');
 
-    get($pathDate)
+    get("/blog/$pathDate")
         ->assertStatus(200)
         ->assertSee('Hello World')
         ->assertDontSee('My mechanics');

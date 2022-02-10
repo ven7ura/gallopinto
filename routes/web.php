@@ -29,9 +29,9 @@ Route::get('/proyectos/{codename}/{slug}', PageProjectController::class)->name('
 
 Route::get('/categoria/{category}', PageCategoryController::class)->name('page.category');
 
-Route::get('/{year}', PagePostYearlyController::class)->name('page.blog.yearly');
-Route::get('/{year}/{month}', PagePostMonthlyController::class)->name('page.blog.monthly');
-Route::get('/{year}/{month}/{slug}', PagePostController::class)->name('page.blog.post');
+Route::get('/blog/{year}', PagePostYearlyController::class)->name('page.blog.yearly');
+Route::get('/blog/{year}/{month}', PagePostMonthlyController::class)->name('page.blog.monthly');
+Route::get('/blog/{year}/{month}/{slug}', PagePostController::class)->name('page.blog.post');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

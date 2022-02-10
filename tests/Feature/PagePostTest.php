@@ -21,7 +21,7 @@ it('shows a specific post', function () {
     $today = Carbon::today();
     $pathDate = $today->format('Y/m');
 
-    get("$pathDate/hello-world")
+    get("/blog/$pathDate/hello-world")
         ->assertStatus(200)
         ->assertSee('Hello World')
         ->assertSee('business')

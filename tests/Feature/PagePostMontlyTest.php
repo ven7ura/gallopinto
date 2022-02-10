@@ -27,7 +27,7 @@ it('shows all the post for the month', function () {
     $today = Carbon::today();
     $pathDate = $today->format('Y/m');
 
-    get($pathDate)
+    get("/blog/$pathDate")
         ->assertStatus(200)
         ->assertSee('Hello World')
         ->assertDontSee('My mechanics');

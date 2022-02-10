@@ -34,5 +34,5 @@ it('outputs the correct link path', function () {
 
     $post = Post::findByPath($today->year, $today->month, 'hello-world');
 
-    expect($post->link())->toBe('http://gallopint.test/2022/02/hello-world');
+    expect($post->link())->toBe('http://gallopint.test/blog/2022/02/hello-world');
 });
