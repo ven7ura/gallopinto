@@ -46,12 +46,27 @@ it('finds all the project items and returns a collection', function () {
     expect($projects)->toHaveCount(10);
 });
 
-// it('outputs the series name of the proyect', function() {
-//     ProjectFactory::new()
-//         ->title('Hello World')
-//         ->project('Hydrophonics')
-//         ->series('Hydrophonics for you and me')
-// });
+it('returns all the unique projects on the blog', function () {
+    $firstProject = ProjectFactory::new()
+        ->codename('first-project')
+        ->project('My first project')
+        ->createMultiple(2);
+
+    $secondProject = ProjectFactory::new()
+        ->codename('second-project')
+        ->project('My second project')
+        ->createMultiple(2);
+
+    $thirdProject = ProjectFactory::new()
+        ->codename('third-project')
+        ->project('My third project')
+        ->create();
+
+    $allProjects = Project::findAllProjects();
+
+    expect($allProjects)->toBeInstanceOf(Collection::class);
+    expect($allProjects)->toHaveCount(3);
+});
 
 it('outputs the correct link path', function () {
     ProjectFactory::new()

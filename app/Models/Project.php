@@ -28,8 +28,14 @@ class Project extends Sheet
             ->sortBy('order');
     }
 
+    public static function findAllProjects()
+    {
+        return Sheets::collection('projects')->all()
+            ->unique('codename');
+    }
+
     public function link(): string
     {
-        return route('page.project', ['codename' => $this->codename, 'slug' => $this->slug]);
+        return route('page.project.post', ['codename' => $this->codename, 'slug' => $this->slug]);
     }
 }

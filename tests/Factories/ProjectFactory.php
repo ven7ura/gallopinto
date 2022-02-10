@@ -93,7 +93,7 @@ class ProjectFactory
 
     public function project(string $project): self
     {
-        $this->content = $project;
+        $this->project = $project;
 
         return $this;
     }

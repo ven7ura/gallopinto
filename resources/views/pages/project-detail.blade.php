@@ -5,7 +5,8 @@
         </div>
         <ol>
         @foreach ($projects as $project)
-            <li>{{ $project->title }}</li>
+            <li>
+                <a href="{{ route('page.project.post', ['codename' => $project->codename, 'slug' => $project->slug]) }}">{{ $project->title }}</a></li>
         @endforeach
         </ol>
     </div>
