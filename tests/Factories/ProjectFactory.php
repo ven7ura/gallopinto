@@ -40,8 +40,7 @@ class ProjectFactory
         $codename = Str::slug($codename ?? $this->codename);
         $path = "{$codename}.{$order}.{$slug}.md";
         $destinationPath = Storage::disk('projects')
-            ->getAdapter()
-            ->getPathPrefix().$path;
+            ->path($path);
 
         copy(base_path('tests/dummyProject.md'), $destinationPath);
         $this->replaceFileDummyContent($path, $title, $this->hidden);
