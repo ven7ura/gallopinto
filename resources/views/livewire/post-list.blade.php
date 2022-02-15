@@ -1,4 +1,4 @@
-<div class="max-w-screen-lg mx-auto p-2 pt-16">
+<div class="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-16">
     <div x-data="{ searchOpen: new URLSearchParams(location.search).get('searchTerm') ?? false }">
         <div class="flex items-center flex-col mb-2">
             <h2 class="text-2xl font-bold tracking-tight" id="blog-section"> Lo ultimo del blog</h2>
@@ -14,7 +14,7 @@
         <div class="py-2" id="search" x-cloak x-show="searchOpen">
             <input type="text" wire:model="searchTerm" x-ref="search"
                 placeholder="Buscar por palabras claves como laravel, vue, etc..."
-                class="w-full form-input relative rounded-md shadow-sm p-4 text-xs md:text-lg lg:text-2xl text-center">
+                class="w-full form-input relative rounded-md shadow-sm p-4 text-xs md:text-lg lg:text-2xl text-center" />
         </div>
         <div class="space-y-12 mt-4">
             @foreach ($results as $post)
@@ -55,3 +55,4 @@
         </div>
         @endif
     </div>
+</div>

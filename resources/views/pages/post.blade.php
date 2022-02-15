@@ -4,7 +4,9 @@
             <div>
                 {{ $post->date->monthName . ' ' . $post->date->year }}
             </div>
-            {{ $post->contents }}
+            <div>
+                {{ $post->contents }}
+            </div>
         </article>
         <aside class="text-sm md:text-base lg:text-lg pt-4">
             <ul>

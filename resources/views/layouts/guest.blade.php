@@ -25,6 +25,7 @@
         <div class="font-sans text-gray-800 antialiased">
             <x-common.navigation/>
             {{ $slot }}
+            <x-common.footer/>
         </div>
     </body>
 </html>

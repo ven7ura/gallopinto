@@ -38,7 +38,7 @@
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div>
                     <div class="hidden sm:block sm:ml-6">
-                        <div class="flex space-x-4">
+                        <div class="flex space-x-4 tracking-tight">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <a href="{{ route('page.project.list') }}" class="{{ (request()->routeIs('page.project*')) ? 'bg-gray-700 text-white' : 'text-gray-900 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
 
