@@ -16,6 +16,6 @@ class PagePostMonthlyController extends Controller
     {
         $posts = Post::findByMonthly($year, $month);
 
-        return $posts;
+        return view('pages.blog.monthly', compact('posts'));
     }
 }

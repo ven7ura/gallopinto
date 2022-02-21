@@ -1,6 +1,6 @@
 <footer id="footer-section" class="mt-4">
 <div class="max-w-screen-lg mx-auto px-2 h-16 sm:px-6 lg:px-8 flex items-center justify-between">
-    <div class="text-gray-500">&copy; Copyright Juan C. Ventura 2022. Todos derechos reservados.</div>
+    <div class="text-gray-500">&copy; Copyright Juan C. Ventura 2022. Todos los derechos reservados.</div>
     <div class="flex">
         <div>
             <a href="#twitter" class="text-gray-500">

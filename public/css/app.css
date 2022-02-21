@@ -969,18 +969,17 @@ select {
 .float-left {
   float: left;
 }
-.m-4 {
-  margin: 1rem;
-}
-.m-8 {
-  margin: 2rem;
-}
-.m-16 {
-  margin: 4rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -1111,18 +1110,6 @@ select {
 .w-4 {
   width: 1rem;
 }
-.w-\[40rem\] {
-  width: 40rem;
-}
-.w-\[30rem\] {
-  width: 30rem;
-}
-.w-\[20rem\] {
-  width: 20rem;
-}
-.w-\[50rem\] {
-  width: 50rem;
-}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -1140,9 +1127,6 @@ select {
 }
 .max-w-7xl {
   max-width: 80rem;
-}
-.max-w-screen-md {
-  max-width: 768px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1314,18 +1298,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-.bg-slate-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-}
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
 .fill-current {
   fill: currentColor;
 }
@@ -1366,6 +1338,10 @@ select {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1377,10 +1353,6 @@ select {
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-}
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 .pl-3 {
   padding-left: 0.75rem;
@@ -1400,6 +1372,9 @@ select {
 .pb-3 {
   padding-bottom: 0.75rem;
 }
+.pl-4 {
+  padding-left: 1rem;
+}
 .pt-4 {
   padding-top: 1rem;
 }
@@ -1414,18 +1389,6 @@ select {
 }
 .pt-1 {
   padding-top: 0.25rem;
-}
-.pt-16 {
-  padding-top: 4rem;
-}
-.pl-4 {
-  padding-left: 1rem;
-}
-.pl-6 {
-  padding-left: 1.5rem;
-}
-.pl-2 {
-  padding-left: 0.5rem;
 }
 .text-center {
   text-align: center;
@@ -1475,23 +1438,20 @@ select {
 .leading-7 {
   line-height: 1.75rem;
 }
-.leading-6 {
-  line-height: 1.5rem;
-}
 .leading-tight {
   line-height: 1.25;
 }
 .tracking-widest {
   letter-spacing: 0.1em;
 }
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
 .tracking-wider {
   letter-spacing: 0.05em;
 }
 .tracking-tighter {
   letter-spacing: -0.05em;
-}
-.tracking-tight {
-  letter-spacing: -0.025em;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -1578,15 +1538,6 @@ select {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.shadow-slate-700 {
-  --tw-shadow-color: #334155;
-  --tw-shadow: var(--tw-shadow-colored);
 }
 .ring-1 {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -1773,28 +1724,21 @@ select {
 .prose-h2\:font-extrabold :is(:where(h2):not(:where([class~="not-prose"] *))) {
   font-weight: 800;
 }
-.prose-h2\:tracking-tight :is(:where(h2):not(:where([class~="not-prose"] *))) {
-  letter-spacing: -0.025em;
-}
 .prose-h2\:tracking-tighter :is(:where(h2):not(:where([class~="not-prose"] *))) {
   letter-spacing: -0.05em;
 }
 .prose-h3\:font-extrabold :is(:where(h3):not(:where([class~="not-prose"] *))) {
   font-weight: 800;
 }
-.prose-h3\:tracking-tight :is(:where(h3):not(:where([class~="not-prose"] *))) {
-  letter-spacing: -0.025em;
-}
 .prose-h3\:tracking-tighter :is(:where(h3):not(:where([class~="not-prose"] *))) {
+  letter-spacing: -0.05em;
+}
+.prose-h4\:tracking-tighter :is(:where(h4):not(:where([class~="not-prose"] *))) {
   letter-spacing: -0.05em;
 }
 .prose-pre\:bg-zinc-900 :is(:where(pre):not(:where([class~="not-prose"] *))) {
   --tw-bg-opacity: 1;
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
-}
-.prose-pre\:bg-zinc-800 :is(:where(pre):not(:where([class~="not-prose"] *))) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 @media (prefers-color-scheme: dark) {
 
@@ -1846,6 +1790,11 @@ select {
     margin-bottom: -1px;
   }
 
+  .sm\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
   .sm\:ml-0 {
     margin-left: 0px;
   }
@@ -1860,6 +1809,10 @@ select {
 
   .sm\:ml-10 {
     margin-left: 2.5rem;
+  }
+
+  .sm\:mt-6 {
+    margin-top: 1.5rem;
   }
 
   .sm\:block {
@@ -1884,10 +1837,6 @@ select {
 
   .sm\:flex-1 {
     flex: 1 1 0%;
-  }
-
-  .sm\:flex-col {
-    flex-direction: column;
   }
 
   .sm\:flex-col-reverse {
@@ -1933,10 +1882,6 @@ select {
 
   .sm\:text-left {
     text-align: left;
-  }
-
-  .sm\:text-center {
-    text-align: center;
   }
 
   .sm\:text-right {
@@ -2155,60 +2100,12 @@ select {
     margin-bottom: 0;
   }
 
-  .md\:absolute {
-    position: absolute;
-  }
-
-  .md\:top-0 {
-    top: 0px;
-  }
-
-  .md\:right-full {
-    right: 100%;
-  }
-
   .md\:float-none {
     float: none;
   }
 
-  .md\:ml-auto {
-    margin-left: auto;
-  }
-
-  .md\:mr-8 {
-    margin-right: 2rem;
-  }
-
   .md\:hidden {
     display: none;
-  }
-
-  .md\:w-\[50rem\] {
-    width: 50rem;
-  }
-
-  .md\:w-\[40rem\] {
-    width: 40rem;
-  }
-
-  .md\:w-\[45rem\] {
-    width: 45rem;
-  }
-
-  .md\:w-\[30rem\] {
-    width: 30rem;
-  }
-
-  .md\:w-\[35rem\] {
-    width: 35rem;
-  }
-
-  .md\:w-\[38rem\] {
-    width: 38rem;
-  }
-
-  .md\:max-w-none {
-    max-width: none;
   }
 
   .md\:grid-cols-2 {
@@ -2217,10 +2114,6 @@ select {
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:whitespace-nowrap {
-    white-space: nowrap;
   }
 
   .md\:border-t-0 {
@@ -2479,8 +2372,17 @@ select {
     right: 100%;
   }
 
+  .lg\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
   .lg\:ml-auto {
     margin-left: auto;
+  }
+
+  .lg\:mt-8 {
+    margin-top: 2rem;
   }
 
   .lg\:block {

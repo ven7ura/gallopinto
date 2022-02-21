@@ -16,6 +16,6 @@ class PagePostYearlyController extends Controller
     {
         $posts = Post::findByYearly($year);
 
-        return $posts;
+        return view('pages.blog.yearly', compact('posts'));
     }
 }
