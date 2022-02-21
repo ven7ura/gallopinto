@@ -20,6 +20,6 @@ class PageProjectDetailController extends Controller
         $projectName = $projects->first()->project;
         // $projectName = Str::title(str_replace('-', ' ', $projects->first()->project));
 
-        return view('pages.project-detail', compact('projects', 'projectName'));
+        return view('pages.project.detail', compact('projects', 'projectName'));
     }
 }

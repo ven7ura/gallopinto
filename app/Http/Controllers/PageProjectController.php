@@ -20,6 +20,6 @@ class PageProjectController extends Controller
             abort(404);
         }
 
-        return view('pages.project', compact('project'));
+        return view('pages.project.post', compact('project'));
     }
 }

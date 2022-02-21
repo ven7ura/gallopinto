@@ -29,7 +29,7 @@
                     <dl>
                         <dt class="sr-only">Fecha</dt>
                         <dd class="text-sm leading-7 lg:absolute lg:top-0 lg:right-full sm:mr-8 lg:whitespace-nowrap">
-                            <a href="{{ route('page.blog.monthly', ['year' => $post->date->year, 'month' => $post->date->month]) }}">{{ $post->date->monthName }}</a> <a href="{{ route('page.blog.yearly', ['year' => $post->date->year]) }}">{{ $post->date->year }}</a>
+                            <a href="{{ route('page.blog.monthly', ['year' => $post->date->year, 'month' => $post->date->format('m')]) }}">{{ $post->date->monthName }}</a> <a href="{{ route('page.blog.yearly', ['year' => $post->date->year]) }}">{{ $post->date->year }}</a>
                         </dd>
                     </dl>
                 </div>

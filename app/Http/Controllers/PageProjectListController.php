@@ -16,6 +16,6 @@ class PageProjectListController extends Controller
     {
         $projects = Project::findAllProjects();
 
-        return view('pages.project-list', compact('projects'));
+        return view('pages.project.list', compact('projects'));
     }
 }
