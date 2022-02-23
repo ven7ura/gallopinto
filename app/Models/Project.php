@@ -13,7 +13,7 @@ class Project extends Sheet
         return $this->attributes['codename'];
     }
 
-    public static function findByPath($codename, $slug): self|null
+    public static function findByPath($codename, $slug)
     {
         return Sheets::collection('projects')->all()
             ->where('codename', $codename)

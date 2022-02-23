@@ -1,5 +1,5 @@
 <x-guest-layout title="Entradas de blog del {{ $posts->first()->year }}">
-    <div class="max-w-screen-lg prose mx-auto px-2 sm:px-6 lg:px-8 mt-2 sm:mt-6 lg:mt-8">
+    <div class="max-w-screen-lg prose prose-h1:tracking-tighter mx-auto px-2 sm:px-6 lg:px-8 mt-2 sm:mt-6 lg:mt-8">
         <h1>Entradas del {{ $posts->first()->year }}</h1>
     </div>
     <div class="bg-white shadow-lg py-4 my-2 sm:my-6 lg:my-8">
