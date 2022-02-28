@@ -22,7 +22,7 @@
                 <h3 class="text-xl tracking-tight font-bold">
                     <a href="{{ $post->link() }}">{{ $post->title }}</a>
                 </h3>
-                <div class="mb-4 prose">
+                <div class="mb-4 prose max-w-none">
                     <p>{{ $post->summary }}</p>
                 </div>
                 <div class="text-gray-500 text-sm mt-auto flex flex-row-reverse items-center justify-end">
