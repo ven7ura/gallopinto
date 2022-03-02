@@ -16,6 +16,10 @@ class PagePostYearlyController extends Controller
     {
         $posts = Post::findByYearly($year);
 
+        if ($posts->isEmpty()) {
+            abort(404);
+        }
+
         return view('pages.blog.yearly', compact('posts'));
     }
 }

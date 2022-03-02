@@ -17,7 +17,11 @@ class PageProjectDetailController extends Controller
     {
         $posts = Project::findByProject($codename);
 
-        $projectName = $posts->first()->project;
+        if ($posts->isEmpty()) {
+            abort(404);
+        }
+
+        $projectName = Str::headline($codename);
         // $projectName = Str::title(str_replace('-', ' ', $projects->first()->project));
 
         return view('pages.project.detail', compact('posts', 'projectName'));

@@ -23,9 +23,9 @@
     </head>
     <body class="bg-gray-200">
         <div class="font-sans text-gray-800 antialiased">
-            <x-common.navigation/>
+            <x-common.navigation />
             {{ $slot }}
-            <x-common.footer/>
+            <x-common.footer />
         </div>
     </body>
 </html>

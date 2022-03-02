@@ -1,6 +1,19 @@
-<x-guest-layout title="Entradas de blog del mes {{ $posts->first()->date->monthName }} {{ $posts->first()->year }}">
+<x-guest-layout title="Entradas del blog - Mes de {{ $monthName }} del {{ $year }}">
+    <x-common.breadcrumb>
+        <li>
+            <a href="{{ route('page.blog.yearly', ['year' => $year]) }}">
+                {{ $year }}
+            </a>
+        </li>
+        <li>
+            <span class="text-gray-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </span>
+        </li>
+        <li class="text-gray-500">{{ $monthName }}</li>
+    </x-common.breadcrumb>
     <div class="max-w-screen-lg prose prose-h1:tracking-tighter mx-auto px-2 sm:px-6 lg:px-8 my-4 sm:my-12 lg:my-16">
-        <h1>Entradas de {{ $posts->first()->date->monthName }} del {{ $posts->first()->year }}</h1>
+        <h1>Entradas de {{ $monthName }} del {{ $year }}</h1>
     </div>
     <div class="bg-white shadow-lg py-4 my-2 sm:my-6 lg:my-8">
         <div class="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 space-y-12">

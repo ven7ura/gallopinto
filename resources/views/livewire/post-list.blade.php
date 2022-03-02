@@ -2,7 +2,7 @@
     <div x-data="{ searchOpen: new URLSearchParams(location.search).get('searchTerm') ?? false }">
         <div class="flex items-center flex-col mb-2">
             <h2 class="text-2xl font-bold tracking-tight" id="blog-section"> Lo ultimo del blog</h2>
-            <p class="text-gray-500">Nuestras ultimas noticias y articulos</p>
+            <p class="text-gray-500">Ultimas noticias y articulos</p>
             <button @click="searchOpen = !searchOpen; if (searchOpen) $nextTick(() => {$refs.search.focus()});">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -29,7 +29,7 @@
                     <dl>
                         <dt class="sr-only">Fecha</dt>
                         <dd class="text-sm leading-7 lg:absolute lg:top-0 lg:right-full sm:mr-8 lg:whitespace-nowrap">
-                            <a href="{{ route('page.blog.monthly', ['year' => $post->date->year, 'month' => $post->date->format('m')]) }}">{{ $post->date->monthName }}</a> <a href="{{ route('page.blog.yearly', ['year' => $post->date->year]) }}">{{ $post->date->year }}</a>
+                            <a href="{{ route('page.blog.monthly', ['year' => $post->date->year, 'month' => $post->date->format('m')]) }}">{{ Str::ucfirst($post->date->monthName) }}</a> <a href="{{ route('page.blog.yearly', ['year' => $post->date->year]) }}">{{ $post->date->year }}</a>
                         </dd>
                     </dl>
                 </div>

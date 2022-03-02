@@ -33,3 +33,8 @@ it('shows all the blog post for the year', function () {
         ->assertDontSee('My mechanics')
         ->assertViewIs('pages.blog.yearly');
 });
+
+it('returns 404 if the year is not correct or no content is found', function () {
+    get('/blog/2034')
+        ->assertNotFound();
+});

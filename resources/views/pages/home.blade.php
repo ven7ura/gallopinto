@@ -4,8 +4,8 @@
             <img class="hidden sm:block h-64 w-auto mx-auto" src="{{ asset('img/gp.svg') }}" alt="GalloPinto">
         </div>
         <div class="mx-auto max-w-2xl tracking-tighter">
-            <h1 class="prose md:text-xl">Hola! <b>somosGalloPinto</b> y nos encanta el <b>desarrollo web</b>.</h1>
-            <h2 class="prose text-sm md:text-lg"><a href="#blog-section">Compartir conociemientos</a>, <a href="{{ route('page.project.list') }}">encontrar y resolver problemas</a> son nuestra mision.</h2>
+            <h1 class="prose md:text-xl">Hola! soy <a class="font-bold" href="https://github.com/ven7ura">ven7ura</a> y me encanta el <b>desarrollo web</b>.</h1>
+            <h2 class="prose text-sm md:text-lg"><a href="#blog-section">Compartir conociemientos</a>, <a href="{{ route('page.project.list') }}">encontrar y resolver problemas</a> son mi mision.</h2>
         </div>
     </div>
     <div class="bg-white shadow-sm">

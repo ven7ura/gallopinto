@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Str;
 
 class PagePostMonthlyController extends Controller
 {
@@ -16,6 +17,14 @@ class PagePostMonthlyController extends Controller
     {
         $posts = Post::findByMonthly($year, $month);
 
-        return view('pages.blog.monthly', compact('posts'));
+        if ($posts->isEmpty()) {
+            abort(404);
+        }
+
+        $post = $posts->first();
+        $monthName = Str::ucfirst($post->date->monthName);
+        $year = Str::ucfirst($post->year);
+
+        return view('pages.blog.monthly', compact('posts', 'monthName', 'year'));
     }
 }
