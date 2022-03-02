@@ -13,11 +13,11 @@ class Project extends Sheet
         return $this->attributes['codename'];
     }
 
-    public static function findByPath($codename, $slug): self|null
+    public static function findByPath($codename, $chapter)
     {
         return Sheets::collection('projects')->all()
             ->where('codename', $codename)
-            ->where('slug', $slug)
+            ->where('chapter', $chapter)
             ->first();
     }
 
@@ -34,8 +34,15 @@ class Project extends Sheet
             ->unique('codename');
     }
 
+    public function chapterCount(): int
+    {
+        return Sheets::collection('projects')->all()
+            ->where('codename', $this->codename)
+            ->count();
+    }
+
     public function link(): string
     {
-        return route('page.project.post', ['codename' => $this->codename, 'slug' => $this->slug]);
+        return route('page.project.post', ['codename' => $this->codename, 'chapter' => $this->chapter]);
     }
 }

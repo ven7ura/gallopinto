@@ -38,7 +38,8 @@ class ProjectFactory
     {
         $slug = Str::slug($title ?? $this->title);
         $codename = Str::slug($codename ?? $this->codename);
-        $path = "{$codename}.{$order}.{$slug}.md";
+        $path = "{$codename}/{$order}.{$slug}.md";
+        Storage::disk('projects')->makeDirectory($codename);
         $destinationPath = Storage::disk('projects')
             ->path($path);
 

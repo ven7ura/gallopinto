@@ -20,3 +20,8 @@ it('shows a ordered list of all the project content', function () {
         ->assertStatus(200)
         ->assertSee('Aprendamos algo nuevo');
 });
+
+it('returns a 404 if no project is found', function () {
+    get('proyectos/esto-no-existe')
+        ->assertNotFound();
+});

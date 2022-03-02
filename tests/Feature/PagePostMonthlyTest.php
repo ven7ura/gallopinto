@@ -30,5 +30,11 @@ it('shows all the post for the month', function () {
     get("/blog/$pathDate")
         ->assertStatus(200)
         ->assertSee('Hello World')
-        ->assertDontSee('My mechanics');
+        ->assertDontSee('My mechanics')
+        ->assertViewIs('pages.blog.monthly');
+});
+
+it('returns 404 if no results are found', function () {
+    get('blog/2025/12')
+        ->assertNotFound();
 });

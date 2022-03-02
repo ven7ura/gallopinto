@@ -15,11 +15,15 @@ class PageProjectDetailController extends Controller
      */
     public function __invoke(Request $request, $codename)
     {
-        $projects = Project::findByProject($codename);
+        $posts = Project::findByProject($codename);
 
-        $projectName = $projects->first()->project;
+        if ($posts->isEmpty()) {
+            abort(404);
+        }
+
+        $projectName = Str::headline($codename);
         // $projectName = Str::title(str_replace('-', ' ', $projects->first()->project));
 
-        return view('pages.project-detail', compact('projects', 'projectName'));
+        return view('pages.project.detail', compact('posts', 'projectName'));
     }
 }

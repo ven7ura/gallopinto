@@ -13,7 +13,7 @@ beforeEach(function () {
 function getProjectFile(string $slug, string $codename, int $order): string
 {
     return Storage::disk('projects')
-        ->get("{$codename}.{$order}.{$slug}.md");
+        ->get("{$codename}/{$order}.{$slug}.md");
 }
 
 it('creates new project file', function () {

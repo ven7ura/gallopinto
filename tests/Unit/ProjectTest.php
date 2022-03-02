@@ -78,3 +78,17 @@ it('outputs the correct link path', function () {
 
     expect($project->link())->toBe('http://gallopint.test/proyectos/hydrophonics/hello-world');
 });
+
+it('returns the total amount of chapters in a project', function () {
+    $codename = 'yolo';
+    $title = 'Hello World';
+
+    ProjectFactory::new()
+        ->codename($codename)
+        ->title($title)
+        ->createMultiple(9);
+
+    $project = Project::findByPath($codename, 'hello-world');
+
+    expect($project->chapterCount($codename))->toBe(9);
+});

@@ -20,6 +20,6 @@ class PagePostController extends Controller
             abort(404);
         }
 
-        return view('pages.post', compact('post'));
+        return view('pages.blog.post', compact('post'));
     }
 }
