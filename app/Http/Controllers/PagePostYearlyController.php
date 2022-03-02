@@ -20,6 +20,10 @@ class PagePostYearlyController extends Controller
             abort(404);
         }
 
-        return view('pages.blog.yearly', compact('posts'));
+        $post = $posts->first();
+
+        $year = $post->year;
+
+        return view('pages.blog.yearly', compact('posts', 'year'));
     }
 }
