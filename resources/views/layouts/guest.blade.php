@@ -21,11 +21,11 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         @livewireScripts
     </head>
-    <body class="bg-gray-200 dark:bg-slate-900">
+    <body class="bg-gray-200 dark:bg-gradient-to-b from-slate-800 to-slate-900 min-h-screen">
         <div class="font-sans text-gray-800 antialiased">
             <x-common.navigation />
             {{ $slot }}
-            <x-common.footer />
         </div>
+            <x-common.footer />
     </body>
 </html>

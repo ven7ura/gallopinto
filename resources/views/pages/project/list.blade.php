@@ -11,7 +11,7 @@
                 @foreach ($projects as $series)
                     <article class="relative flex flex-col max-w-3xl lg:ml-auto lg:max-w-none lg:w-[50rem]">
                         <h3 class="text-xl tracking-tight font-bold dark:text-white dark:hover:text-orange-300">
-                            <a href="{{ route('page.project.detail', ['codename' => $series->codename]) }}">{{ $series->project }}</a>
+                            <a class="underline dark:text-white dark:hover:text-orange-300" href="{{ route('page.project.detail', ['codename' => $series->codename]) }}">{{ $series->project }}</a>
                         </h3>
                         <p class="prose lg:prose-lg text-gray-500 dark:text-gray-400">
                             {{ $series->summary }}

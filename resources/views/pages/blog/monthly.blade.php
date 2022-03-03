@@ -20,7 +20,7 @@
             @foreach ($posts as $post)
                 <article class="relative flex flex-col max-w-3xl lg:ml-auto lg:max-w-none lg:w-[50rem]">
                     <h3 class="text-xl tracking-tight font-bold dark:text-white dark:hover:text-orange-300">
-                        <a href="{{ $post->link() }}">{{ $post->title }}</a>
+                        <a class="underline dark:text-white dark:hover:text-orange-300" href="{{ $post->link() }}">{{ $post->title }}</a>
                     </h3>
                     <div class="mb-4 prose dark:prose-invert">
                         <p class="dark:text-gray-400">{{ $post->summary }}</p>

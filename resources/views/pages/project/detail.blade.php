@@ -20,8 +20,8 @@
             <div class="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-16 space-y-12">
                 @foreach ($posts as $post)
                     <article class="relative flex flex-col max-w-3xl lg:ml-auto lg:max-w-none lg:w-[50rem]">
-                        <h3 class="text-xl tracking-tight font-bold dark:text-white dark:hover:text-orange-300">
-                            <a href="{{ route('page.project.post', ['codename' => $post->codename, 'chapter' => $post->chapter]) }}">{{ $post->title }}</a>
+                        <h3 class="text-xl tracking-tight font-bold">
+                            <a class="underline dark:text-white dark:hover:text-orange-300" href="{{ route('page.project.post', ['codename' => $post->codename, 'chapter' => $post->chapter]) }}">{{ $post->title }}</a>
                         </h3>
                         <p class="prose lg:prose-lg text-gray-500 dark:text-gray-400">
                             {{ $post->summary }}
