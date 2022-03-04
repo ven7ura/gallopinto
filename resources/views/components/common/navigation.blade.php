@@ -40,8 +40,8 @@
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <a href="{{ route('page.project.list') }}" class="{{ (request()->routeIs('page.project*')) ? 'bg-gray-700 text-white dark:bg-slate-800' : 'text-gray-900 hover:bg-slate-800 hover:text-white dark:text-white dark:hover:text-orange-300' }} px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
-                            <a href="#" class="{{ (request()->routeIs('page.contact')) ? 'bg-gray-700 text-white' : 'text-gray-900 hover:bg-slate-800 hover:text-white dark:text-white dark:hover:text-orange-300' }} px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+                            <a href="{{ route('page.project.list') }}" class="{{ (request()->routeIs('page.project*')) ? 'bg-gray-700 text-white dark:bg-slate-800 dark:text-orange-300' : 'text-gray-900 hover:bg-slate-800 hover:text-white dark:text-white dark:hover:text-orange-300' }} px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
+                            {{-- <a href="#" class="{{ (request()->routeIs('page.contact')) ? 'bg-gray-700 text-white dark:bg-slate-800 dark:text-orange-300' : 'text-gray-900 hover:bg-slate-800 hover:text-white dark:text-white dark:hover:text-orange-300' }} px-3 py-2 rounded-md text-sm font-medium">Contacto</a> --}}
                             <button
                                 x-data="{
                                     toggleTheme: () => {
@@ -56,7 +56,7 @@
                                     isDark: localStorage.theme === 'dark',
                                 }"
                                 class="text-gray-900 hover:bg-slate-800 hover:text-white dark:text-white dark:hover:text-orange-300 dark:hover:bg-slate-800 px-3 py-2 rounded-md text-sm font-medium"
-                                x-on:click="toggleTheme()"
+                                x-on:click.camel="toggleTheme()"
                             >
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                             </button>
