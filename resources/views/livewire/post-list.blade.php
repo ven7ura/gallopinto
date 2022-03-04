@@ -4,7 +4,7 @@
             <h2 class="text-2xl font-bold tracking-tight dark:text-white" id="blog-section"> Lo ultimo del blog</h2>
             <p class="text-gray-500 dark:text-gray-400">Ultimas noticias y articulos</p>
             <button @click="searchOpen = !searchOpen; if (searchOpen) $nextTick(() => {$refs.search.focus()});">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white dark:hover:text-red-500" fill="none" viewBox="0 0 24 24"
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 dark:text-white dark:hover:text-red-500" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
