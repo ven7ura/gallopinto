@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ $title }} | Somos GalloPinto</title>
+        <title>{{ $title }} - ven7ura</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +21,11 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         @livewireScripts
     </head>
-    <body class="bg-gray-200">
+    <body class="bg-gray-200 dark:bg-gradient-to-b from-slate-800 to-slate-900 min-h-screen">
         <div class="font-sans text-gray-800 antialiased">
             <x-common.navigation />
             {{ $slot }}
-            <x-common.footer />
         </div>
+            <x-common.footer />
     </body>
 </html>

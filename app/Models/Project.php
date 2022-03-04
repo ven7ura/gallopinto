@@ -31,6 +31,7 @@ class Project extends Sheet
     public static function findAllProjects()
     {
         return Sheets::collection('projects')->all()
+            ->sortBy('order')
             ->unique('codename');
     }
 

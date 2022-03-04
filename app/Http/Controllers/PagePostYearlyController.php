@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PagePostYearlyController extends Controller
 {
@@ -22,8 +23,9 @@ class PagePostYearlyController extends Controller
 
         $post = $posts->first();
 
+        $monthName = Str::ucfirst($post->date->monthName);
         $year = $post->year;
 
-        return view('pages.blog.yearly', compact('posts', 'year'));
+        return view('pages.blog.yearly', compact('posts', 'year', 'monthName'));
     }
 }
