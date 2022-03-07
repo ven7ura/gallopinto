@@ -27,14 +27,17 @@ class Post extends Sheet
 
     public static function findByCategory($category): Collection
     {
-        return Sheets::all()->filter(function (Post $post) use ($category) {
-            return in_array(strtolower($category), $post->categories);
-        });
+        return Sheets::all()
+            ->where('hidden', false)
+            ->filter(function (Post $post) use ($category) {
+                return in_array(strtolower($category), $post->categories);
+            });
     }
 
     public static function findByPath($year, $month, string $slug)
     {
         return Sheets::all()
+            ->where('hidden', false)
             ->where('year', $year)
             ->where('month', $month)
             ->where('slug', $slug)
@@ -44,6 +47,7 @@ class Post extends Sheet
     public static function findBySearch(string $query): Collection
     {
         return Sheets::all()
+            ->where('hidden', false)
             ->sortByDesc('date')
             ->filter(function ($file) use ($query) {
                 return Str::contains($file, $query);
@@ -53,6 +57,7 @@ class Post extends Sheet
     public static function findByMonthly($year, $month): Collection
     {
         return Sheets::all()
+            ->where('hidden', false)
             ->where('year', $year)
             ->where('month', $month)
             ->sortByDesc('date');
@@ -61,18 +66,22 @@ class Post extends Sheet
     public static function findByYearly($year): Collection
     {
         return Sheets::all()
+            ->where('hidden', false)
             ->where('year', $year)
             ->sortByDesc('date');
     }
 
     public static function count(): int
     {
-        return Sheets::all()->count();
+        return Sheets::all()
+            ->where('hidden', false)
+            ->count();
     }
 
     public static function paginate(int $postPerPage, int $page): Collection
     {
         return Sheets::all()
+            ->where('hidden', false)
             ->sortByDesc('date')
             ->skip(($page - 1) * $postPerPage)
             ->take($postPerPage);

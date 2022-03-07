@@ -25,6 +25,12 @@ it('finds the categories attached to the blog post', function () {
         ->create();
 
     PostFactory::new()
+        ->title('Hidden My Friend')
+        ->categories(['laravel'])
+        ->hidden(true)
+        ->create();
+
+    PostFactory::new()
         ->title('Hello One Last Time')
         ->categories(['vue'])
         ->create();
@@ -49,11 +55,31 @@ it('finds a specific post by path', function () {
     expect('Hello World')->toBe($post->title);
 });
 
+it('fails if a specific post by path is hidden', function () {
+    PostFactory::new()
+        ->title('Hidden World')
+        ->hidden(true)
+        ->create();
+
+    $today = Carbon::today();
+
+    $post = Post::findByPath($today->year, $today->month, 'hidden-world');
+
+    expect($post)->toBeNull();
+});
+
 it('it finds the blog posts by searching the file names', function () {
     PostFactory::new()
         ->title('Hello World')
         ->categories(['laravel', 'vue'])
         ->content('I have the needle')
+        ->create();
+
+    PostFactory::new()
+        ->title('Hidden World')
+        ->categories(['laravel', 'vue'])
+        ->content('I have the needle')
+        ->hidden(true)
         ->create();
 
     PostFactory::new()
@@ -91,6 +117,13 @@ it('finds the blog posts for the month', function () {
         ->categories(['Business', 'Laravel'])
         ->create();
 
+    PostFactory::new()
+        ->title('Hidden World')
+        ->content('My blog content')
+        ->hidden(true)
+        ->categories(['Business', 'Laravel'])
+        ->create();
+
     $today = Carbon::today();
 
     $post = Post::findByMonthly($today->year, $today->month);
@@ -116,6 +149,13 @@ it('finds the blog posts for the year', function () {
         ->categories(['Business', 'Laravel'])
         ->create();
 
+    PostFactory::new()
+        ->title('Hidden World')
+        ->content('My blog content')
+        ->hidden(true)
+        ->categories(['Business', 'Laravel'])
+        ->create();
+
     $today = Carbon::today();
 
     $post = Post::findByYearly($today->year);
@@ -138,12 +178,23 @@ it('returns the count of all the blog posts', function () {
         ->categories(['Business', 'Laravel'])
         ->create();
 
+    PostFactory::new()
+        ->title('Hello World Hidden')
+        ->content('My blog content for the hidden post')
+        ->hidden(true)
+        ->categories(['Business', 'Laravel'])
+        ->create();
+
     expect(Post::count())->toEqual(2);
 });
 
-it('paginates the blog posts', function () {
+it('paginates the blog posts that are unhidden', function () {
     PostFactory::new()
         ->createMultiple(30);
+
+    PostFactory::new()
+        ->hidden(true)
+        ->createMultiple(20);
 
     $pageOnePosts = Post::paginate(15, 1);
 

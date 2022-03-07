@@ -97,4 +97,11 @@ class ProjectFactory
 
         return $this;
     }
+
+    public function hidden(bool $hidden): self
+    {
+        $this->hidden = $hidden;
+
+        return $this;
+    }
 }

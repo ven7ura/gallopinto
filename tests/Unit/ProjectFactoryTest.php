@@ -50,6 +50,20 @@ it('sets the project name correctly', function () {
     $this->assertStringContainsString('My new project', getProjectFile('my-project-title', 'my-project', 1));
 });
 
+it('sets the hidden value correctly', function () {
+    ProjectFactory::new()
+        ->hidden(true)
+        ->create();
+
+    $this->assertStringContainsString('hidden: true', getProjectFile('my-project-title', 'my-project', 1));
+
+    ProjectFactory::new()
+        ->hidden(false)
+        ->create();
+
+    $this->assertStringContainsString('hidden: false', getProjectFile('my-project-title', 'my-project', 1));
+});
+
 it('creates multiple post files', function () {
     $projects = ProjectFactory::new()
         ->createMultiple(3);

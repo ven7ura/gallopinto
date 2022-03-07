@@ -1,6 +1,6 @@
 <x-guest-layout title="Entradas de blog del {{ $year }}">
     <x-common.breadcrumb>
-        <li class="text-gray-300">{{ $year }}</li>
+        <li class="dark:text-gray-300 text-gray-500">{{ $year }}</li>
     </x-common.breadcrumb>
     <div class="max-w-screen-lg prose dark:prose-invert prose-h1:tracking-tight mx-auto px-2 sm:px-6 lg:px-8 my-4 sm:my-12 lg:my-16">
         <h1>Entradas del {{ $year }}</h1>
