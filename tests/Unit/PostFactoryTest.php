@@ -53,6 +53,14 @@ it('sets the post content', function () {
     $this->assertStringContainsString('content', getPostFile('my-blog-title'));
 });
 
+it('sets the hidden attribute', function () {
+    PostFactory::new()
+        ->title('Hidden Post')
+        ->hidden(true)
+        ->create();
+    $this->assertStringContainsString('hidden: true', getPostFile('hidden-post'));
+});
+
 it('sets the post date', function () {
     $lastMonth = Carbon::today()->subMonth(2);
     $dateFormat = $lastMonth->format('Y-m-d');

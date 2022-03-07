@@ -38,3 +38,22 @@ it('returns 404 if no results are found', function () {
     get('blog/2025/12')
         ->assertNotFound();
 });
+
+it('does not show if a blog post is hidden', function () {
+    $post = PostFactory::new()
+        ->title('Hidden Content')
+        ->content('My blog content')
+        ->categories(['Business', 'Laravel'])
+        ->hidden(true)
+        ->create();
+
+    $secondPost = PostFactory::new()
+        ->title('Hello world')
+        ->hidden(false);
+
+    $today = Carbon::today();
+    $pathDate = $today->format('Y/m');
+
+    get("/blog/$pathDate")
+        ->assertDontSee('Hidden Content');
+});
