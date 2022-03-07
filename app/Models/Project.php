@@ -16,6 +16,7 @@ class Project extends Sheet
     public static function findByPath($codename, $chapter)
     {
         return Sheets::collection('projects')->all()
+            ->where('hidden', false)
             ->where('codename', $codename)
             ->where('chapter', $chapter)
             ->first();
@@ -24,6 +25,7 @@ class Project extends Sheet
     public static function findByProject($codename): Collection
     {
         return Sheets::collection('projects')->all()
+            ->where('hidden', false)
             ->where('codename', $codename)
             ->sortBy('order');
     }

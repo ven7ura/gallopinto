@@ -26,3 +26,14 @@ it('shows a 404 error if no project page is found', function () {
     get('proyectos/this-does-not-exists/hello-world')
         ->assertNotFound();
 });
+
+it('does not show if a project chapter is hidden', function () {
+    ProjectFactory::new()
+        ->codename('my-hidden-project')
+        ->title('Hidden Chapter')
+        ->hidden(true)
+        ->create();
+
+    get('/proyectos/my-hidden-project/hidden-chapter')
+        ->assertNotFound();
+});

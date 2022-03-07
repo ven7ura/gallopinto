@@ -29,3 +29,14 @@ it('shows the list of all unique projects on the site', function () {
         ->assertSee('My second project')
         ->assertSee('My third project');
 });
+
+it('does not show if a project chapter is hidden', function () {
+    ProjectFactory::new()
+        ->codename('my-hidden-project')
+        ->title('Hidden Chapter')
+        ->hidden(true)
+        ->create();
+
+    get('/proyectos/my-hidden-project')
+        ->assertDontSee('Hidden Chapter');
+});

@@ -2666,6 +2666,11 @@ code[class*="language-"], pre[class*="language-"] {
 	background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
+.prose-img\:mx-auto :is(:where(img):not(:where([class~="not-prose"] *))) {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .dark .dark\:prose-invert {
 	--tw-prose-body: var(--tw-prose-invert-body);
 	--tw-prose-headings: var(--tw-prose-invert-headings);
@@ -2708,16 +2713,6 @@ code[class*="language-"], pre[class*="language-"] {
 .dark .dark\:bg-slate-800 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-slate-900 {
-	--tw-bg-opacity: 1;
-	background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-slate-400 {
-	--tw-bg-opacity: 1;
-	background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:bg-gradient-to-b {

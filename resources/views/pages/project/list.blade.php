@@ -27,7 +27,7 @@
                     </article>
                 @endforeach
             @else
-                Todavia no hay projectos...
+                <div class="dark:text-white">Todavia no hay projectos...</div>
             @endif
         </div>
     </div>
