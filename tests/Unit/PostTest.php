@@ -213,5 +213,5 @@ it('outputs the correct link path', function () {
 
     $post = Post::findByPath($today->year, $today->month, 'hello-world');
 
-    expect($post->link())->toBe("http://gallopint.test/blog/{$today->format('Y')}/{$today->format('m')}/hello-world");
+    expect($post->link())->toBe(env('APP_URL')."/blog/{$today->format('Y')}/{$today->format('m')}/hello-world");
 });
