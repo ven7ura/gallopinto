@@ -88,6 +88,12 @@ it('returns the total amount of chapters in a project', function () {
         ->title($title)
         ->createMultiple(9);
 
+    ProjectFactory::new()
+        ->codename($codename)
+        ->title($title.' Hidden')
+        ->hidden(true)
+        ->createMultiple(9);
+
     $project = Project::findByPath($codename, 'hello-world');
 
     expect($project->chapterCount($codename))->toBe(9);
