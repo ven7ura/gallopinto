@@ -14,7 +14,7 @@
         <div class="py-2" id="search" x-cloak x-show="searchOpen">
             <input type="text" wire:model="searchTerm" x-ref="search"
                 placeholder="Buscar por palabras claves como laravel, vue, etc..."
-                class="w-full form-input relative rounded-md shadow-sm p-4 text-xs md:text-lg lg:text-2xl text-center bg-gray-300" />
+                class="w-full form-input relative rounded-md shadow-sm p-4 text-xs md:text-lg lg:text-2xl text-center dark:bg-gray-300" />
         </div>
         <div class="space-y-12 mt-4">
             @foreach ($results as $post)
