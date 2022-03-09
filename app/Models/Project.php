@@ -40,6 +40,7 @@ class Project extends Sheet
     public function chapterCount(): int
     {
         return Sheets::collection('projects')->all()
+            ->where('hidden', false)
             ->where('codename', $this->codename)
             ->count();
     }
