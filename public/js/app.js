@@ -3481,12 +3481,6 @@ var module_default = src_default;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-if (localStorage.theme === 'dark' || !('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.documentElement.classList.add('dark');
-} else {
-  document.documentElement.classList.remove('dark');
-}
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
