@@ -21,7 +21,6 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .purgeCss()
     .browserSync({
-        host: "192.168.1.19",
         proxy: process.env.APP_URL,
         files: "content/**/*",
         open: false
