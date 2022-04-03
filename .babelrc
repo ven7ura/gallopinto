@@ -2,7 +2,7 @@
   "plugins": [
     [
       "prismjs", {
-        "languages": ["javascript", "css", "php"],
+        "languages": ["javascript", "css", "php", "bash"],
         "plugins": ["show-language"],
         "css": true
       }
