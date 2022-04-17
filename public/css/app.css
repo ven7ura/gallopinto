@@ -2671,10 +2671,6 @@ code[class*="language-"], pre[class*="language-"] {
 	margin-right: auto;
 }
 
-.prose-img\:w-1\/2 :is(:where(img):not(:where([class~="not-prose"] *))) {
-	width: 50%;
-}
-
 .prose-img\:w-3\/4 :is(:where(img):not(:where([class~="not-prose"] *))) {
 	width: 75%;
 }

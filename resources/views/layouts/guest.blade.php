@@ -22,6 +22,13 @@
         @livewireScripts
     </head>
     <body class="bg-gray-200 dark:bg-gradient-to-b from-slate-800 to-slate-900 min-h-screen">
+        <script>
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+            } else {
+            document.documentElement.classList.remove('dark')
+            }
+        </script>
         <div class="font-sans text-gray-800 antialiased">
             <x-common.navigation />
             {{ $slot }}
