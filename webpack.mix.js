@@ -20,5 +20,9 @@ mix.js('resources/js/app.js', 'public/js')
         require('autoprefixer'),
     ])
     .purgeCss()
-    .browserSync(process.env.APP_URL)
+    .browserSync({
+        proxy: process.env.APP_URL,
+        files: "content/**/*",
+        open: false
+    })
     .disableNotifications();
