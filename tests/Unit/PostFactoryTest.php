@@ -14,8 +14,7 @@ beforeEach(function () {
 function getPostFile(string $slug): string
 {
     return Storage::disk('posts')
-        ->get(Carbon::today()
-            ->format('Y-m-d').".$slug.md");
+        ->get(Carbon::today()->format('Y-m-d').".$slug.md");
 }
 
 it('creates new post file', function () {
