@@ -10,12 +10,16 @@ use Str;
 class PostFactory
 {
     private string $title = 'My Blog Title';
+
     private array $categories = [];
+
     private string $content = '';
+
     private bool $hidden = false;
+
     private $date = null;
 
-    public static function new(): PostFactory
+    public static function new(): self
     {
         return new static();
     }
@@ -47,12 +51,12 @@ class PostFactory
             ->path($path);
 
         copy(base_path('tests/dummy.md'), $destinationPath);
-        $this->replaceFileDummyContent($path, $title, $this->hidden);
+        $this->replaceFileDummyContent($path, $title);
 
         return $destinationPath;
     }
 
-    private function replaceFileDummyContent(string $path, string $title, bool $listed): void
+    private function replaceFileDummyContent(string $path, string $title): void
     {
         $fileContent = Storage::disk('posts')
             ->get($path);
@@ -60,7 +64,7 @@ class PostFactory
             ->replace('{{blog_title}}', $title)
             ->replace('{{categories}}', implode(', ', $this->categories))
             ->replace('{{content}}', $this->content)
-            ->replace('{{hidden}}', $listed ? 'true' : 'false');
+            ->replace('{{hidden}}', $this->hidden ? 'true' : 'false');
 
         Storage::disk('posts')
             ->put($path, $replacedFileContent);
