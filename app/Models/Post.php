@@ -29,7 +29,7 @@ class Post extends Sheet
     {
         return Sheets::all()
             ->where('hidden', false)
-            ->filter(function (Post $post) use ($category) {
+            ->filter(function (self $post) use ($category) {
                 return in_array(strtolower($category), $post->categories);
             });
     }

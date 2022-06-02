@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageBlogPostController;
 use App\Http\Controllers\PageCategoryController;
 use App\Http\Controllers\PageHomeController;
 use App\Http\Controllers\PagePostController;
@@ -31,7 +32,7 @@ Route::get('/categoria/{category}', PageCategoryController::class)->name('page.c
 
 Route::get('/blog/{year}', PagePostYearlyController::class)->name('page.blog.yearly');
 Route::get('/blog/{year}/{month}', PagePostMonthlyController::class)->name('page.blog.monthly');
-Route::get('/blog/{year}/{month}/{slug}', PagePostController::class)->name('page.blog.post');
+Route::get('/blog/{year}/{month}/{slug}', PageBlogPostController::class)->name('page.blog.post');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
