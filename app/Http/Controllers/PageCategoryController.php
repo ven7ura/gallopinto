@@ -18,6 +18,10 @@ class PageCategoryController extends Controller
         $posts = Post::findByCategory($category);
         $category = Str::ucfirst($category);
 
+        if ($posts->isEmpty()) {
+            abort(404);
+        }
+
         return view('pages.category', compact(['posts', 'category']));
     }
 }
