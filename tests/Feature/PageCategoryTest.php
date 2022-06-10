@@ -23,7 +23,11 @@ it('shows posts only from one category', function () {
 
     get('categoria/business')
         ->assertSuccessful()
+        ->assertViewIs('pages.category')
         ->assertSee('Blog went well')
         ->assertSee('This is my business')
         ->assertDontSee('This is a laravel blog');
+
+    get('categoria/notfound')
+        ->assertNotFound();
 });
