@@ -13,12 +13,9 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@400;700;800&display=swap" rel="stylesheet"> 
         {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <!-- Styles & Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
         @livewireScripts
     </head>
     <body class="bg-gray-200 dark:bg-gradient-to-b from-slate-800 to-slate-900 min-h-screen">
