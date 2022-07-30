@@ -39,11 +39,11 @@ it('lists the latest blog posts first', function () {
 it('it paginates post lists', function () {
     PostFactory::new()->createMultiple(30);
 
-    for ($postCount = 30; $postCount > 15; --$postCount) {
+    for ($postCount = 30; $postCount > 20; --$postCount) {
         $this->get('/')
                 ->assertSee("My Blog Title $postCount");
     }
 
     $this->get('/')
-            ->assertDontSee('My Blog Title 15');
+            ->assertDontSee('My Blog Title 20');
 });

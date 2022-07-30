@@ -30,11 +30,15 @@
         </article>
         <aside class="text-sm md:text-base lg:text-lg pt-4">
             <ul>
-                @foreach ($post->categories as $category)
-                    <li class="float-left pl-1 md:float-none md:p-1">
-                        <a href="{{ route('page.category', $category) }}" class="text-gray-500 dark:text-gray-300 underline">#{{ $category }}</a>    
-                    </li>
-                @endforeach
+                @empty($post->categories)
+                    <li class="text-white line-through">#notags</li>
+                @else
+                    @foreach ($post->categories as $category)
+                        <li class="float-left pl-1 md:float-none md:p-1">
+                            <a href="{{ route('page.category', $category) }}" class="text-gray-500 dark:text-gray-300 underline">#{{ $category }}</a>    
+                        </li>
+                    @endforeach
+                @endempty
             </ul>
         </aside>
     </div>
