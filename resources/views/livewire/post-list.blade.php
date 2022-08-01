@@ -1,7 +1,7 @@
 <div class="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-16">
     <div x-data="{ searchOpen: new URLSearchParams(location.search).get('searchTerm') ?? false }">
         <div class="flex items-center flex-col mb-4">
-            <h2 class="text-2xl font-bold tracking-tight dark:text-white" id="blog-section"> Lo ultimo del blog</h2>
+            <h2 class="text-2xl font-bold tracking-tight dark:text-white" id="blog-section"> Lo último del blog</h2>
             <p class="text-gray-500 dark:text-gray-400">Ultimas noticias y articulos</p>
             <button @click="searchOpen = !searchOpen; if (searchOpen) $nextTick(() => {$refs.search.focus()});">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 dark:text-white dark:hover:text-red-500" fill="none" viewBox="0 0 24 24"
@@ -38,21 +38,39 @@
             </ul>
         </div>
         @if(!$searchTerm)
-        <div class="flex justify-center" wire:loading>Loading...</div>
-        <div wire:loading.remove>
-            <ul>
-                @if($currentPage !== 1)
-                <li>
-                    Previous
-                </li>
-                @endif
-                @if($pagesCount > 1 && $currentPage !== $pagesCount)
-                <li>
-                    Next
-                </li>
-                @endif
-            </ul>
-        </div>
+            <div class="flex justify-center" wire:loading>Loading...</div>
+            <nav wire:loading.remove class="border-t border-t-gray-200 dark:border-t-slate-700 mt-8 px-4 flex items-center justify-between sm:px-0">
+                <div class="w-0 flex-1 flex">
+                    @if($currentPage !== 1)
+                        <button wire:click="previousPage" class="-mt-px border-t-2 border-transparent pt-4 pr-1 inline-flex items-center text-sm leading-5 font-medium text-gray-500 dark:text-white hover:text-gray-700 dark:hover:text-orange-300 hover:border-gray-300 dark:hover:border-orange-300 focus:outline-none focus:text-gray-700 focus:border-gray-400 dark:focus:border-orange-300 transition ease-in-out duration-150">
+                            <svg class="mr-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                                clip-rule="evenodd"/>
+                            </svg>
+                            Anterior
+                        </button>
+                    @endif
+                </div>
+                <div class="hidden md:flex">
+                    <span
+                    class="border-t-2 dark:border-t-orange-300 border-textBlue dark:text-white pt-4 px-4 inline-flex items-center text-sm leading-5 font-medium text-textBlue focus:outline-none focus:textBlue focus:textBlue transition ease-in-out duration-150">
+                        {{ $currentPage }} / {{ $pagesCount }}
+                    </span>
+                </div>
+                <div class="w-0 flex-1 flex justify-end">
+                    @if($pagesCount > 1 && $currentPage !== $pagesCount)
+                        <button wire:click="nextPage" class="-mt-px border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-sm leading-5 font-medium text-gray-500 dark:text-white hover:text-gray-700 dark:hover:text-orange-300 hover:border-gray-300 dark:hover:border-orange-300 focus:outline-none focus:text-gray-700 focus:border-gray-400 dark:focus:border-orange-300 transition ease-in-out duration-15">
+                            Siguiente
+                            <svg class="ml-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    @endif
+                </div>
+            </nav>
         @endif
     </div>
 </div>

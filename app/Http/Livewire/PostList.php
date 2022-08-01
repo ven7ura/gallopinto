@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class PostList extends Component
 {
-    public int $postPerPage = 15;
+    public int $postPerPage = 10;
     public int $currentPage = 1;
     public int $pagesCount;
     public string $searchTerm = '';

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Tests\Factories\PostFactory;
 
@@ -12,30 +13,31 @@ it('shows post per page', function () {
 
     Livewire::test('post-list')
         ->assertSee('My Blog Title 30')
-        ->assertDontSee('My Blog Title 15')
+        ->assertDontSee('My Blog Title 20')
         ->call('nextPage')
-        ->assertSee('My Blog Title 15')
-        ->assertSee('My Blog Title 1')
+        ->assertSee('My Blog Title 20')
+        ->assertSee('My Blog Title 11')
         ->assertDontSee('My Blog Title 30')
         ->call('previousPage')
-        ->assertDontSee('My Blog Title 15')
+        ->assertDontSee('My Blog Title 20')
         ->assertSee('My Blog Title 30');
 });
 
 it('show pagination during browsing', function () {
-    PostFactory::new()->createMultiple(30);
+    PostFactory::new()->createMultiple(20);
 
     Livewire::test('post-list')
-        ->assertSee('Next')
-        ->assertDontSee('Previous')
+        ->assertSee('Siguiente')
+        ->assertDontSee('Anterior')
         ->call('nextPage')
-        ->assertSee('Previous')
-        ->assertDontSee('Next');
+        ->assertSee('Anterior')
+        ->assertDontSee('Siguiente');
 });
 
 test('the method find by search works correctly', function () {
     PostFactory::new()
         ->title('Laravel new features')
+        ->date(Carbon::today()->subYear())
         ->create();
 
     PostFactory::new()->createMultiple(40);
@@ -52,8 +54,8 @@ it('resets pagination after search', function () {
     ->call('nextPage')
     ->assertSet('currentPage', 2)
     ->set('searchTerm', 'laravel')
-    ->assertDontSee('Next')
+    ->assertDontSee('Siguiente')
     ->set('searchTerm', '')
-    ->assertSee('Next')
+    ->assertSee('Siguiente')
     ->assertSet('currentPage', 1);
 });

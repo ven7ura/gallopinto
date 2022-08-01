@@ -5,6 +5,7 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@defstudio/vite-livewire-plugin": "^0.2.0",
         "@rollup/plugin-babel": "^5.3.1",
         "@tailwindcss/forms": "^0.5.2",
         "@tailwindcss/typography": "^0.5.4",
