@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Tests\Factories\PostFactory;
 
@@ -36,6 +37,7 @@ it('show pagination during browsing', function () {
 test('the method find by search works correctly', function () {
     PostFactory::new()
         ->title('Laravel new features')
+        ->date(Carbon::today()->subYear())
         ->create();
 
     PostFactory::new()->createMultiple(40);
