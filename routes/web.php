@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PageCategoryController;
 use App\Http\Controllers\PageHomeController;
 use App\Http\Controllers\PagePostController;
@@ -22,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', PageHomeController::class)->name('page.home');
+Route::feeds();
+
+Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
 Route::get('/proyectos', PageProjectListController::class)->name('page.project.list');
 Route::get('/proyectos/{codename}', PageProjectDetailController::class)->name('page.project.detail');
