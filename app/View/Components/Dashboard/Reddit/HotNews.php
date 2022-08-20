@@ -3,7 +3,6 @@
 namespace App\View\Components\Dashboard\Reddit;
 
 use Cache;
-use Illuminate\Support\Facades\Http;
 use Illuminate\View\Component;
 
 class HotNews extends Component
@@ -24,13 +23,7 @@ class HotNews extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('hot-news', 600, function () {
-            return collect(
-                Http::withHeaders(['accept' => 'application/json'])
-                    ->get('https://api.reddit.com/r/popular/top?t=day&limit=10')
-                    ->json()['data']['children']
-            );
-        });
+        $posts = Cache::get('hot-news');
 
         return view('components.dashboard.reddit.hot-news', compact('posts'));
     }

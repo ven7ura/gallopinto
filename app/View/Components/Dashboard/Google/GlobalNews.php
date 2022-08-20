@@ -4,7 +4,6 @@ namespace App\View\Components\Dashboard\Google;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Component;
-use Vedmant\FeedReader\Facades\FeedReader;
 
 class GlobalNews extends Component
 {
@@ -24,11 +23,7 @@ class GlobalNews extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('global-news', 600, function () {
-            return collect(
-                FeedReader::read('https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en')->get_items()
-            )->forPage(1, 10);
-        });
+        $posts = Cache::get('global-news');
 
         return view('components.dashboard.google.global-news', compact('posts'));
     }

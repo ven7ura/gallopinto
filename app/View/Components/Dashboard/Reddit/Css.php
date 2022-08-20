@@ -3,7 +3,6 @@
 namespace App\View\Components\Dashboard\Reddit;
 
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Http;
 use Illuminate\View\Component;
 
 class Css extends Component
@@ -24,13 +23,7 @@ class Css extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('css', 600, function () {
-            return collect(
-                Http::withHeaders(['accept' => 'application/json'])
-                    ->get('https://api.reddit.com/r/css/top?t=day&limit=10')
-                    ->json()['data']['children']
-            );
-        });
+        $posts = Cache::get('css');
 
         return view('components.dashboard.reddit.css', compact('posts'));
     }

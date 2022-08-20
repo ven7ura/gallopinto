@@ -4,7 +4,6 @@ namespace App\View\Components\Dashboard\HackerNews;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Component;
-use Vedmant\FeedReader\Facades\FeedReader;
 
 class LatestPosts extends Component
 {
@@ -24,11 +23,7 @@ class LatestPosts extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('latest-hacker-posts', 600, function () {
-            return collect(
-                FeedReader::read('https://news.ycombinator.com/rss')->get_items()
-            )->forPage(1, 10);
-        });
+        $posts = Cache::get('latest-hacker-news-posts');
 
         return view('components.dashboard.hacker-news.latest-posts', compact('posts'));
     }

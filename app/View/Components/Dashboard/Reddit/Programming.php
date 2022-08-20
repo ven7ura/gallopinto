@@ -3,7 +3,6 @@
 namespace App\View\Components\Dashboard\Reddit;
 
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Http;
 use Illuminate\View\Component;
 
 class Programming extends Component
@@ -24,13 +23,7 @@ class Programming extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('programming', 600, function () {
-            return collect(
-                Http::withHeaders(['accept' => 'application/json'])
-                    ->get('https://api.reddit.com/r/programming/top?t=day&limit=10')
-                    ->json()['data']['children']
-            );
-        });
+        $posts = Cache::get('programming');
 
         return view('components.dashboard.reddit.programming', compact('posts'));
     }

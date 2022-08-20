@@ -11,7 +11,7 @@
                         <li class="mr-2" role="presentation">
                             <span
                                 class="inline-block text-red-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >NEWS</button>
+                                >Noticias</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
@@ -96,7 +96,7 @@
                         <li class="mr-2" role="presentation">
                             <span
                                 class="inline-block text-green-700 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >WEBDEV</button>
+                                >webDev</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
@@ -187,7 +187,7 @@
                         <li class="mr-2" role="presentation">
                             <span
                                 class="inline-block text-blue-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >PICTURES</button>
+                                >Im&aacute;genes</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
@@ -236,7 +236,7 @@
                         <li class="mr-2" role="presentation">
                             <span
                                 class="inline-block text-purple-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >TECH</button>
+                                >Tecnolog&iacute;a</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button

@@ -4,7 +4,6 @@ namespace App\View\Components\Dashboard\LifeHacker;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Component;
-use Vedmant\FeedReader\Facades\FeedReader;
 
 class LatestPosts extends Component
 {
@@ -24,11 +23,7 @@ class LatestPosts extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('latest-life-hacker-posts', 600, function () {
-            return collect(
-                FeedReader::read('https://lifehacker.com/rss')->get_items()
-            )->forPage(1, 10);
-        });
+        $posts = Cache::get('latest-life-hacker-posts');
 
         return view('components.dashboard.life-hacker.latest-posts', compact('posts'));
     }

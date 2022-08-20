@@ -3,7 +3,6 @@
 namespace App\View\Components\Dashboard\Reddit;
 
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Http;
 use Illuminate\View\Component;
 
 class Vue extends Component
@@ -24,13 +23,7 @@ class Vue extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('vue', 600, function () {
-            return collect(
-                Http::withHeaders(['accept' => 'application/json'])
-                    ->get('https://api.reddit.com/r/vuejs/top?t=day&limit=10')
-                    ->json()['data']['children']
-            );
-        });
+        $posts = Cache::get('vue');
 
         return view('components.dashboard.reddit.vue', compact('posts'));
     }
