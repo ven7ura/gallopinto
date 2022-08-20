@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Dashboard\Google;
+namespace App\View\Components\Dashboard\HackerNews;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Component;
 use Vedmant\FeedReader\Facades\FeedReader;
 
-class GlobalNews extends Component
+class LatestPosts extends Component
 {
     /**
      * Create a new component instance.
@@ -24,12 +24,12 @@ class GlobalNews extends Component
      */
     public function render()
     {
-        $posts = Cache::remember('global-news', 600, function () {
+        $posts = Cache::remember('latest-hacker-posts', 600, function () {
             return collect(
-                FeedReader::read('https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en')->get_items()
+                FeedReader::read('https://news.ycombinator.com/rss')->get_items()
             )->forPage(1, 10);
         });
 
-        return view('components.dashboard.google.global-news', compact('posts'));
+        return view('components.dashboard.hacker-news.latest-posts', compact('posts'));
     }
 }

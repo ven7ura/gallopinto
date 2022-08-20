@@ -7,17 +7,16 @@
             }">
             <div class="sm:m-6 lg:m-8 basis-1/2">
                 <div class="border-b border-gray-200 dark:border-gray-700">
-                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#newsTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-red-500 py-4 pr-4 text-sm font-bold text-center border-transparent border-b-2 border-textBlue"
-                                id="profile-tab" data-tabs-target="#profile" type="button" role="tab"
-                                aria-controls="profile" aria-selected="false">NEWS</button>
+                                class="inline-block text-red-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
+                                >NEWS</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
-                                id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab"
+                                id="hot-news-tab" data-tabs-target="#hot-news" type="button" role="tab"
                                 aria-controls="dashboard" aria-selected="true"
                                 :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#hot-news' }"
                                 @click.prevent="newsTab = '#hot-news'">
@@ -32,7 +31,7 @@
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="settings-newsTab" data-tabs-target="#settings" type="button" role="tab"
+                                id="trending-news-tab" data-tabs-target="#trending-news" type="button" role="tab"
                                 aria-controls="settings" aria-selected="false"
                                 :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#trending-news' }"
                                 @click.prevent="newsTab = '#trending-news'">
@@ -47,7 +46,7 @@
                         <li role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
+                                id="world-news-tab" data-tabs-target="#world-news" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
                                 :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#world-news' }"
                                 @click.prevent="newsTab = '#world-news'">
@@ -62,7 +61,7 @@
                         <li role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
+                                id="google-news-tab" data-tabs-target="#google-news" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
                                 :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#google-news' }"
                                 @click.prevent="newsTab = '#google-news'">
@@ -93,17 +92,16 @@
             </div>
             <div class="sm:m-6 lg:m-8 basis-1/2">
                 <div class="border-b border-gray-200 dark:border-gray-700 basis-1/2">
-                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#devTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-green-700 py-4 pr-4 text-sm font-bold text-center border-transparent border-b-2 border-textBlue"
-                                id="profile-tab" data-tabs-target="#profile" type="button" role="tab"
-                                aria-controls="profile" aria-selected="false">WEBDEV</button>
+                                class="inline-block text-green-700 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
+                                >WEBDEV</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
+                                id="laravel-tab" data-tabs-target="#laravel" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
                                 :class="{ 'text-green-700 hover:text-green-900' : devTab === '#laravel' }"
                                 @click.prevent="devTab = '#laravel'">
@@ -119,7 +117,7 @@
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
+                                id="vue-tab" data-tabs-target="#vue" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
                                 :class="{ 'text-green-700 hover:text-green-900' : devTab === '#vue' }"
                                 @click.prevent="devTab = '#vue'">
@@ -134,7 +132,7 @@
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
+                                id="css-tab" data-tabs-target="#css" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
                                 :class="{ 'text-green-700 hover:text-green-900' : devTab === '#css' }"
                                 @click.prevent="devTab = '#css'">
@@ -149,7 +147,7 @@
                         <li role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab"
+                                id="programming-tab" data-tabs-target="#programming" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
                                 :class="{ 'text-green-700 hover:text-green-900' : devTab === '#programming' }"
                                 @click.prevent="devTab = '#programming'">
@@ -177,23 +175,27 @@
                         <x-dashboard.reddit.programming />
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
-        <div class="flex flex-col md:flex-row max-w-screen-lg mx-auto bg-white dark:bg-slate-800">
+        <div class="flex flex-col md:flex-row max-w-screen-lg mx-auto dark:bg-slate-800" x-data="{
+            picturesTab : window.location.hash ? window.location.hash : '#deviantart',
+            techTab : window.location.hash ? window.location.hash : '#hn'
+        }">
             <div class="sm:m-6 lg:m-8 basis-1/2">
                 <div class="border-b border-gray-200 dark:border-gray-700 basis-1/2">
-                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#picturesTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-red-500 py-4 pr-4 text-sm font-bold text-center border-transparent border-b-2 border-textBlue"
-                                id="profile-tab" data-tabs-target="#profile" type="button" role="tab"
-                                aria-controls="profile" aria-selected="false">PICTURES</button>
+                                class="inline-block text-blue-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
+                                >PICTURES</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
-                                class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
-                                id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab"
-                                aria-controls="dashboard" aria-selected="true">
+                                class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+                                id="deviantart-tab" data-tabs-target="#deviantart" type="button" role="tab"
+                                aria-controls="deviantart" aria-selected="false"
+                                :class="{ 'text-blue-700 hover:text-blue-900' : picturesTab === '#deviantart' }"
+                                @click.prevent="picturesTab = '#deviantart'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 320 512">
                                     <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -205,8 +207,10 @@
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="settings-tab" data-tabs-target="#settings" type="button" role="tab"
-                                aria-controls="settings" aria-selected="false">
+                                id="reddit-pictures-tab" data-tabs-target="#reddit-pictures" type="button" role="tab"
+                                aria-controls="reddit-pictures" aria-selected="false"
+                                :class="{ 'text-blue-700 hover:text-blue-900' : picturesTab === '#reddit-pictures' }"
+                                @click.prevent="picturesTab = '#reddit-pictures'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512">
                                     <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -217,22 +221,30 @@
                         </li>
                     </ul>
                 </div>
-                <div>Hello World!</div>
+                <div>
+                    <div x-show="picturesTab == '#deviantart'" x-cloak>
+                        <x-dashboard.pictures.deviantart />
+                    </div>
+                    <div x-show="picturesTab == '#reddit-pictures'" x-cloak>
+                        <x-dashboard.reddit.wallpapers />
+                    </div>
+                </div>
             </div>
             <div class="sm:m-6 lg:m-8 basis-1/2">
                 <div class="border-b border-gray-200 dark:border-gray-700 basis-1/2">
-                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                    <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#newsTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-red-500 py-4 pr-4 text-sm font-bold text-center border-transparent border-b-2 border-textBlue"
-                                id="profile-tab" data-tabs-target="#profile" type="button" role="tab"
-                                aria-controls="profile" aria-selected="false">TECH</button>
+                                class="inline-block text-purple-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
+                                >TECH</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="settings-tab" data-tabs-target="#settings" type="button" role="tab"
-                                aria-controls="settings" aria-selected="false">
+                                id="hacker-news-tab" data-tabs-target="#hn" type="button" role="tab"
+                                aria-controls="reddit-pictures" aria-selected="false"
+                                :class="{ 'text-purple-700 hover:text-purple-900' : techTab === '#hn' }"
+                                @click.prevent="techTab = '#hn'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 448 512">
                                     <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -243,9 +255,11 @@
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
-                                class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
-                                id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab"
-                                aria-controls="dashboard" aria-selected="true">
+                                class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+                                id="futurology-tab" data-tabs-target="#futurology" type="button" role="tab"
+                                aria-controls="reddit-pictures" aria-selected="false"
+                                :class="{ 'text-purple-700 hover:text-purple-900' : techTab === '#futurology' }"
+                                @click.prevent="techTab = '#futurology'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512">
                                     <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -256,15 +270,27 @@
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
-                                class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
-                                id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab"
-                                aria-controls="dashboard" aria-selected="true">
+                                class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+                                id="life-hacker-tab" data-tabs-target="#life-hacker" type="button" role="tab"
+                                aria-controls="reddit-pictures" aria-selected="false"
+                                :class="{ 'text-purple-700 hover:text-purple-900' : techTab === '#life-hacker' }"
+                                @click.prevent="techTab = '#life-hacker'">
                                 LH
                             </button>
                         </li>
                     </ul>
                 </div>
-                <div>Hello World!</div>
+                <div>
+                    <div x-show="techTab == '#hn'" x-cloak>
+                        <x-dashboard.hacker-news.latest-posts />
+                    </div>
+                    <div x-show="techTab == '#futurology'" x-cloak>
+                        <x-dashboard.reddit.futurology />
+                    </div>
+                    <div x-show="techTab == '#life-hacker'" x-cloak>
+                        <x-dashboard.life-hacker.latest-posts />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
