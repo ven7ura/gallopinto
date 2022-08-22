@@ -10,11 +10,12 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
             ],
-            refresh: [
-                'resources/views/**',
-                'routes/**',
-                'content/**'
-            ],
+            refresh: false,
+            // [
+            //     'resources/views/**',
+            //     'routes/**',
+            //     'content/**'
+            // ],
         }),
         babel({ babelHelpers: 'bundled' }),
         livewire({
