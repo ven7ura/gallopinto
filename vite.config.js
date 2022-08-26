@@ -10,17 +10,17 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
             ],
-            refresh: false,
-            // [
-            //     'resources/views/**',
-            //     'routes/**',
-            //     'content/**'
-            // ],
+            // refresh: false,
+            refresh : [
+                'resources/views/**',
+                'routes/**',
+                'content/**'
+            ],
         }),
+    //     livewire({
+    //        refresh: ['resources/css/app.css'],
+    //    }),
         babel({ babelHelpers: 'bundled' }),
-        livewire({
-           refresh: ['resources/css/app.css'],
-       }),
     ],
     resolve: {
         alias: {

@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 trait MakesApiCalls
 {
-    public function fakeRedditApiCall(int $limit = 10, string $title = null, string $subReddit = null)
+    public function fakeRedditApiCall(int $limit = 10, string $title = null, string $subReddit = null): array
     {
         $faker = Faker::create();
         $title ??= 'Test title';
