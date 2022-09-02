@@ -3,7 +3,7 @@
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
-                <button @click="navOpen = !navOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <button @click="navOpen = !navOpen" type="button" class="inline-flex items-center justify-center rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <!--
                     Icon when menu is closed.
@@ -69,10 +69,10 @@
     </div>
     <div x-cloak x-show="navOpen" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="{{ route('page.home') }}" class="{{ (request()->routeIs('page.home')) ? 'bg-slate-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-orange-300 dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
-            <a href="{{ route('dashboard') }}" class="{{ (request()->routeIs('dashboard*')) ? 'bg-gray-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-orange-300 dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
-            <a href="{{ route('page.project.list') }}" class="{{ (request()->routeIs('page.project.*')) ? 'bg-gray-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-orange-300 dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Proyectos</a>
-            <a href="#" class="{{ (request()->routeIs('page.contact')) ? 'bg-gray-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-orange-300 dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            <a href="{{ route('page.home') }}" class="{{ (request()->routeIs('page.home')) ? 'bg-slate-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-white dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+            <a href="{{ route('dashboard') }}" class="{{ (request()->routeIs('dashboard*')) ? 'bg-gray-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-white dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+            <a href="{{ route('page.project.list') }}" class="{{ (request()->routeIs('page.project.*')) ? 'bg-gray-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-white dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Proyectos</a>
+            <a href="#" class="{{ (request()->routeIs('page.contact')) ? 'bg-gray-700 text-white block dark:bg-slate-800' : 'text-gray-900 hover:bg-gray-700 hover:text-white dark:text-white dark:hover:text-white dark:hover:bg-slate-800' }} block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
                             <button
                                 x-data="{
                                     toggleTheme: () => {

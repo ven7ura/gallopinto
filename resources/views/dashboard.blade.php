@@ -1,11 +1,11 @@
 <x-guest-layout title="Dashboard">
     <div class="max-w-screen-lg mx-auto h-16"></div>
-    <div class="bg-white">
+    <div class="bg-white dark:bg-slate-800">
         <div class="flex flex-col md:flex-row max-w-screen-lg mx-auto dark:bg-slate-800" x-data="{ 
                 newsTab: window.location.hash ? window.location.hash : '#hot-news',
                 devTab: window.location.hash ? window.location.hash : '#laravel'
             }">
-            <div class="sm:m-6 lg:m-8 basis-1/2">
+            <div class="sm:m-6 lg:m-8 basis-1/2 px-2 sm:px-0">
                 <div class="border-b border-gray-200 dark:border-gray-700">
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#newsTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
@@ -18,7 +18,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
                                 id="hot-news-tab" data-tabs-target="#hot-news" type="button" role="tab"
                                 aria-controls="dashboard" aria-selected="true"
-                                :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#hot-news' }"
+                                :class="{ 'text-red-500 hover:text-red-600 dark:text-red-500' : newsTab === '#hot-news' }"
                                 @click.prevent="newsTab = '#hot-news'">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="trending-news-tab" data-tabs-target="#trending-news" type="button" role="tab"
                                 aria-controls="settings" aria-selected="false"
-                                :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#trending-news' }"
+                                :class="{ 'text-red-500 hover:text-red-600 dark:text-red-500' : newsTab === '#trending-news' }"
                                 @click.prevent="newsTab = '#trending-news'">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="world-news-tab" data-tabs-target="#world-news" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
-                                :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#world-news' }"
+                                :class="{ 'text-red-500 hover:text-red-600 dark:text-red-500' : newsTab === '#world-news' }"
                                 @click.prevent="newsTab = '#world-news'">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="google-news-tab" data-tabs-target="#google-news" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
-                                :class="{ 'text-red-500 hover:text-red-600' : newsTab === '#google-news' }"
+                                :class="{ 'text-red-500 hover:text-red-600 dark:text-red-500' : newsTab === '#google-news' }"
                                 @click.prevent="newsTab = '#google-news'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 488 512">
@@ -90,12 +90,12 @@
                     </div>
                 </div>
             </div>
-            <div class="sm:m-6 lg:m-8 basis-1/2">
+            <div class="sm:m-6 lg:m-8 basis-1/2 px-2 sm:px-0">
                 <div class="border-b border-gray-200 dark:border-gray-700 basis-1/2">
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#devTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-green-700 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
+                                class="inline-block text-green-700 dark:text-green-600 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
                                 >webDev</button>
                         </li>
                         <li class="mr-2" role="presentation">
@@ -103,7 +103,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="laravel-tab" data-tabs-target="#laravel" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
-                                :class="{ 'text-green-700 hover:text-green-900' : devTab === '#laravel' }"
+                                :class="{ 'text-green-700 hover:text-green-900 dark:text-green-600' : devTab === '#laravel' }"
                                 @click.prevent="devTab = '#laravel'">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 512 512"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +119,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="vue-tab" data-tabs-target="#vue" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
-                                :class="{ 'text-green-700 hover:text-green-900' : devTab === '#vue' }"
+                                :class="{ 'text-green-700 hover:text-green-900 dark:text-green-600' : devTab === '#vue' }"
                                 @click.prevent="devTab = '#vue'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 448 512">
@@ -134,7 +134,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="css-tab" data-tabs-target="#css" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
-                                :class="{ 'text-green-700 hover:text-green-900' : devTab === '#css' }"
+                                :class="{ 'text-green-700 hover:text-green-900 dark:text-green-600' : devTab === '#css' }"
                                 @click.prevent="devTab = '#css'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512">
@@ -149,7 +149,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="programming-tab" data-tabs-target="#programming" type="button" role="tab"
                                 aria-controls="contacts" aria-selected="false"
-                                :class="{ 'text-green-700 hover:text-green-900' : devTab === '#programming' }"
+                                :class="{ 'text-green-700 hover:text-green-900 dark:text-green-600' : devTab === '#programming' }"
                                 @click.prevent="devTab = '#programming'">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -181,7 +181,7 @@
             picturesTab : window.location.hash ? window.location.hash : '#deviantart',
             techTab : window.location.hash ? window.location.hash : '#hn'
         }">
-            <div class="sm:m-6 lg:m-8 basis-1/2">
+            <div class="sm:m-6 lg:m-8 basis-1/2 px-2 sm:px-0">
                 <div class="border-b border-gray-200 dark:border-gray-700 basis-1/2">
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#picturesTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
@@ -194,7 +194,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="deviantart-tab" data-tabs-target="#deviantart" type="button" role="tab"
                                 aria-controls="deviantart" aria-selected="false"
-                                :class="{ 'text-blue-700 hover:text-blue-900' : picturesTab === '#deviantart' }"
+                                :class="{ 'text-blue-700 hover:text-blue-900 dark:text-blue-600' : picturesTab === '#deviantart' }"
                                 @click.prevent="picturesTab = '#deviantart'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 320 512">
@@ -209,7 +209,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="reddit-pictures-tab" data-tabs-target="#reddit-pictures" type="button" role="tab"
                                 aria-controls="reddit-pictures" aria-selected="false"
-                                :class="{ 'text-blue-700 hover:text-blue-900' : picturesTab === '#reddit-pictures' }"
+                                :class="{ 'text-blue-700 hover:text-blue-900 dark:text-blue-700' : picturesTab === '#reddit-pictures' }"
                                 @click.prevent="picturesTab = '#reddit-pictures'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512">
@@ -230,7 +230,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sm:m-6 lg:m-8 basis-1/2">
+            <div class="sm:m-6 lg:m-8 basis-1/2 px-2 sm:px-0">
                 <div class="border-b border-gray-200 dark:border-gray-700 basis-1/2">
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#newsTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
@@ -243,7 +243,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="hacker-news-tab" data-tabs-target="#hn" type="button" role="tab"
                                 aria-controls="reddit-pictures" aria-selected="false"
-                                :class="{ 'text-purple-700 hover:text-purple-900' : techTab === '#hn' }"
+                                :class="{ 'text-purple-700 dark:text-purple-500 hover:text-purple-900' : techTab === '#hn' }"
                                 @click.prevent="techTab = '#hn'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 448 512">
@@ -258,7 +258,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="futurology-tab" data-tabs-target="#futurology" type="button" role="tab"
                                 aria-controls="reddit-pictures" aria-selected="false"
-                                :class="{ 'text-purple-700 hover:text-purple-900' : techTab === '#futurology' }"
+                                :class="{ 'text-purple-700 dark:text-purple-500 hover:text-purple-900' : techTab === '#futurology' }"
                                 @click.prevent="techTab = '#futurology'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512">
@@ -273,7 +273,7 @@
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
                                 id="life-hacker-tab" data-tabs-target="#life-hacker" type="button" role="tab"
                                 aria-controls="reddit-pictures" aria-selected="false"
-                                :class="{ 'text-purple-700 hover:text-purple-900' : techTab === '#life-hacker' }"
+                                :class="{ 'text-purple-700 dark:text-purple-500 hover:text-purple-900' : techTab === '#life-hacker' }"
                                 @click.prevent="techTab = '#life-hacker'">
                                 LH
                             </button>
