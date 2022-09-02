@@ -32,7 +32,7 @@ test('that the feeder default view shows correctly all the posts that are reques
 });
 
 test('that the global news component loads the correct data', function () {
-    $posts = collect($this->fakeRssCall(5)->get_items())->forPage(1, 10);
+    $posts = $this->fakeRssItems(5);
 
     Cache::shouldReceive('get')
         ->once()
@@ -45,7 +45,7 @@ test('that the global news component loads the correct data', function () {
 });
 
 test('that the latests post from hacker news component loads the correct data', function () {
-    $posts = collect($this->fakeRssCall(5)->get_items())->forPage(1, 10);
+    $posts = $this->fakeRssItems(5);
 
     Cache::shouldReceive('get')
         ->once()
@@ -58,7 +58,7 @@ test('that the latests post from hacker news component loads the correct data', 
 });
 
 test('that the latests post from life hacker news component loads the correct data', function () {
-    $posts = collect($this->fakeRssCall(5)->get_items())->forPage(1, 10);
+    $posts = $this->fakeRssItems(5);
 
     Cache::shouldReceive('get')
         ->once()
@@ -71,7 +71,7 @@ test('that the latests post from life hacker news component loads the correct da
 });
 
 test('that the latests post from deviantart component loads the correct data', function () {
-    $posts = collect($this->fakeRssCall(5)->get_items())->forPage(1, 10);
+    $posts = $this->fakeRssItems(5);
 
     Cache::shouldReceive('get')
         ->once()
@@ -80,5 +80,5 @@ test('that the latests post from deviantart component loads the correct data', f
 
     $view = $this->component(Deviantart::class);
 
-    $view->assertSee($posts->first());
+    $view->assertSee($posts->first()->get_thumbnail()['url']);
 });
