@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import { babel } from '@rollup/plugin-babel';
-import livewire from '@defstudio/vite-livewire-plugin';
+// import livewire from '@defstudio/vite-livewire-plugin';
 
 export default defineConfig({
     plugins: [
@@ -17,9 +17,11 @@ export default defineConfig({
                 'content/**'
             ],
         }),
-    //     livewire({
-    //        refresh: ['resources/css/app.css'],
-    //    }),
+        // livewire({
+        //    refresh: [
+        //         'resources/css/app.css'
+        //     ],
+        // }),
         babel({ babelHelpers: 'bundled' }),
     ],
     resolve: {
