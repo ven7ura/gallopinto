@@ -15,12 +15,11 @@
         {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
 
         <!-- Styles & Scripts -->
-
-        <livewire:styles />
-
-        <livewire:scripts />
-
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        @livewireStyles()
+
+        @livewireScripts()
 
     </head>
     <body class="bg-gray-200 dark:bg-gradient-to-b from-slate-800 to-slate-900 min-h-screen">
