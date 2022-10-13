@@ -1,5 +1,5 @@
 <x-guest-layout title="Inicio">
-    <div class=" max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 h-96 flex flex-col md:flex-row justify-center items-center mb-8">
+    <div class="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 h-96 flex flex-col md:flex-row justify-center items-center mb-8">
         <div>
             <img class="hidden sm:block h-64 w-auto mx-auto" src="{{ asset('img/gp.svg') }}" alt="GalloPinto">
         </div>
