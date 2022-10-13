@@ -4,12 +4,31 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 use Spatie\Sheets\Facades\Sheets;
 use Spatie\Sheets\Sheet;
 use Str;
 
-class Post extends Sheet
+class Post extends Sheet implements Feedable
 {
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create()
+            ->id("/blog/{$this->year}/{$this->month}/{$this->slug}")
+            ->title($this->title)
+            ->summary($this->summary)
+            ->updated($this->date)
+            ->link($this->link())
+            ->authorName('Juan C. Ventura')
+            ->authorEmail('contact@ven7ura.com');
+    }
+
+    public static function getFeedItems()
+    {
+        return Sheets::all();
+    }
+
     public function getYearAttribute(): string
     {
         return Carbon::parse($this->attributes['date'])->format('Y');
