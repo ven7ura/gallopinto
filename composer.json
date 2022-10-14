@@ -12,6 +12,7 @@
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
+        "livewire/livewire": "^2.10",
         "spatie/laravel-feed": "^4.1",
         "spatie/sheets": "^1.8.1",
         "vedmant/laravel-feed-reader": "^1.5"
