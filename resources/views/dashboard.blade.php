@@ -1,7 +1,10 @@
 <x-guest-layout title="Dashboard">
+    @seo(['description' => 'Dashboard para ver todas las noticias en un solo lugar.'])
+    @seo(['image' => asset('img/gp.svg')])
+    @seo(['twitter.creator' => 'nicaCloud'])
     <div class="max-w-screen-lg mx-auto h-16"></div>
     <div class="bg-white dark:bg-slate-800">
-        <div class="flex flex-col md:flex-row max-w-screen-lg mx-auto dark:bg-slate-800" x-data="{ 
+        <div class="flex flex-col md:flex-row max-w-screen-lg mx-auto dark:bg-slate-800" x-data="{
                 newsTab: window.location.hash ? window.location.hash : '#hot-news',
                 devTab: window.location.hash ? window.location.hash : '#laravel'
             }">
@@ -10,8 +13,7 @@
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#newsTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-red-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >Noticias</button>
+                                class="inline-block text-red-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue">Noticias</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
@@ -95,8 +97,7 @@
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#devTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-green-700 dark:text-green-600 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >webDev</button>
+                                class="inline-block text-green-700 dark:text-green-600 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue">webDev</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
@@ -117,8 +118,8 @@
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="vue-tab" data-tabs-target="#vue" type="button" role="tab"
-                                aria-controls="contacts" aria-selected="false"
+                                id="vue-tab" data-tabs-target="#vue" type="button" role="tab" aria-controls="contacts"
+                                aria-selected="false"
                                 :class="{ 'text-green-700 hover:text-green-900 dark:text-green-600' : devTab === '#vue' }"
                                 @click.prevent="devTab = '#vue'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -132,8 +133,8 @@
                         <li class="mr-2" role="presentation">
                             <button
                                 class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-                                id="css-tab" data-tabs-target="#css" type="button" role="tab"
-                                aria-controls="contacts" aria-selected="false"
+                                id="css-tab" data-tabs-target="#css" type="button" role="tab" aria-controls="contacts"
+                                aria-selected="false"
                                 :class="{ 'text-green-700 hover:text-green-900 dark:text-green-600' : devTab === '#css' }"
                                 @click.prevent="devTab = '#css'">
                                 <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +176,7 @@
                         <x-dashboard.reddit.programming />
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="flex flex-col md:flex-row max-w-screen-lg mx-auto dark:bg-slate-800" x-data="{
             picturesTab : window.location.hash ? window.location.hash : '#deviantart',
@@ -186,8 +187,7 @@
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#picturesTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-blue-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >Im&aacute;genes</button>
+                                class="inline-block text-blue-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue">Im&aacute;genes</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
@@ -235,8 +235,7 @@
                     <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#newsTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
                             <span
-                                class="inline-block text-purple-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue"
-                                >Tecnolog&iacute;a</button>
+                                class="inline-block text-purple-500 py-4 pr-4 text-sm font-bold text-center tracking-tighter border-transparent border-b-2 border-textBlue">Tecnolog&iacute;a</button>
                         </li>
                         <li class="mr-2" role="presentation">
                             <button
