@@ -1,7 +1,7 @@
-<x-guest-layout title="Inicio">
-    @seo(['description' => 'Hola soy ven7ura y me encanta el desarrollo web. Compartir conocimientos, encontrar y
-    resolver
-    problemas son mi mision'])
+<x-guest-layout title="">
+    @seo(['description' => 'Hola soy ven7ura y me encanta el desarrollo web con Laravel, Livewire y VueJS. Compartir
+    conocimientos, encontrar y
+    resolver problemas son la mision del blog.'])
     @seo(['image' => asset('img/gp.svg')])
     @seo(['twitter.creator' => 'nicaCloud'])
     <div
