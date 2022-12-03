@@ -1,4 +1,4 @@
-<x-guest-layout title="">
+<x-guest-layout title="Inicio">
     @seo(['description' => 'Hola soy ven7ura y me encanta el desarrollo web con Laravel, Livewire y VueJS. Compartir
     conocimientos, encontrar y
     resolver problemas son la mision del blog.'])
